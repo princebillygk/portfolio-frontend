@@ -5,11 +5,9 @@ import concat from 'gulp-concat'
 import rename from 'gulp-rename'
 import gh from 'gulp-gh-pages'
 import notify from 'gulp-notify'
-import del  from 'del'
+import del from 'del'
 
 import imgmin from 'gulp-imagemin'
-import browserSync from 'browser-sync'
-const sync = browserSync.create()
 
 import gsass from 'gulp-sass'
 import dsass from 'sass'
@@ -56,22 +54,20 @@ export const css = (cb) => {
         }))
         .pipe(concat('style.css'))
         .pipe(pcss([uncss({ html: htmlFiles })]))
-        .pipe(dest(path.join(distPath, './css')))
+        .pipe(dest(destination('./css')))
         .pipe(pcss([cssnano]))
         .pipe(rename({ suffix: '.min' }))
         .pipe(dest(destination('./css/')))
-        .pipe(sync.stream());
     return cb()
 }
 
 export const js = (cb) => {
     src(jsPath)
-        .pipe(concat('script.js'))
-        .pipe(dest(path.join(distPath, './js')))
+        .pipe(concat('index.js'))
+        .pipe(dest(destination('./js/')))
         .pipe(uglify())
         .pipe(rename({ suffix: '.min' }))
         .pipe(dest(destination('./js/')))
-        .pipe(sync.stream());
     return cb()
 }
 
@@ -80,7 +76,6 @@ export const html = (cb) => {
     src(htmlPath)
         .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(dest(distPath))
-        .pipe(sync.stream());
     return cb()
 }
 
@@ -88,29 +83,18 @@ export const image = (cb) => {
     src(imgPath)
         .pipe(imgmin())
         .pipe(dest(destination('./assets/img/')))
-        .pipe(sync.stream());
-    return cb()
-}
-
-export const live = (cb) => {
-    sync.init({
-        server: {
-            baseDir: "./dist/",
-        }
-    })
     return cb()
 }
 
 export const build = series(html, parallel(js, css))
 const all = series(clean, build)
 export default all
-export const dev = series(all, browserSync,
-    (cb) => {
-        watch([htmlPath], html)
-        watch([imgPath], image)
-        watch([jsPath], js)
-        watch([scssPath, htmlFiles], css)
-        return cb()
+export const dev = series(all,
+    () => {
+        watch(htmlPath, html, css)
+        watch(imgPath, image)
+        watch(jsPath, js)
+        watch(scssPath, css)
     })
 
 export const deploy = series(clean, () =>
