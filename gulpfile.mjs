@@ -6,6 +6,7 @@ import rename from 'gulp-rename'
 import gh from 'gulp-gh-pages'
 import notify from 'gulp-notify'
 import del from 'del'
+import connect from 'gulp-connect'
 
 import imgmin from 'gulp-imagemin'
 
@@ -58,6 +59,7 @@ export const css = (cb) => {
         .pipe(pcss([cssnano]))
         .pipe(rename({ suffix: '.min' }))
         .pipe(dest(destination('./css/')))
+        .pipe(connect.reload())
     return cb()
 }
 
@@ -68,6 +70,7 @@ export const js = (cb) => {
         .pipe(uglify())
         .pipe(rename({ suffix: '.min' }))
         .pipe(dest(destination('./js/')))
+        .pipe(connect.reload())
     return cb()
 }
 
@@ -76,6 +79,7 @@ export const html = (cb) => {
     src(htmlPath)
         .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(dest(distPath))
+        .pipe(connect.reload())
     return cb()
 }
 
@@ -83,19 +87,26 @@ export const image = (cb) => {
     src(imgPath)
         .pipe(imgmin())
         .pipe(dest(destination('./assets/img/')))
+        .pipe(connect.reload())
     return cb()
 }
 
 export const build = series(html, parallel(js, css))
-const all = series(clean, build)
-export default all
-export const dev = series(all,
-    () => {
-        watch(htmlPath, html, css)
+export default series(clean, build)
+export const serve = () => {
+    connect.server({
+        root: distPath,
+        livereload: true
+    })
+}
+
+export const dev  = series(clean , build, parallel (serve ,() => {
+        console.log("Watching: " , htmlFiles, imgPath, jsPath, scssPath)
+        watch(htmlPath, series(html, css))
         watch(imgPath, image)
         watch(jsPath, js)
         watch(scssPath, css)
-    })
+}))
 
 export const deploy = series(clean, () =>
     src(path.join(distPath, './**/*'))
