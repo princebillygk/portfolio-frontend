@@ -11,7 +11,10 @@
     "start": "gulp dev",
     "clean": "gulp clean"
   },
-  "dependencies": {},
+  "dependencies": {
+    "l": "^0.6.0",
+    "normalize.css": "^8.0.1"
+  },
   "devDependencies": {
     "cssnano": "^5.1.5",
     "del": "^6.0.0",

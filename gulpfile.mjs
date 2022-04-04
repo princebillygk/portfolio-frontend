@@ -36,7 +36,7 @@ const destination = (loc) => {
 const scssPath = source('./scss/**/*.{scss,css}')
 const jsPath = source('./js/**/*.js')
 const htmlPath = source('./**/*.html')
-const imgPath = source('./assets/img/**/*.{png,gif,jpg,webp}')
+const imgPath = source('./assets/img/**/*.{png,gif,jpg,webp,ico}')
 // console.log(scssPath, jsPath, htmlPath, imgPath)
 
 
@@ -91,8 +91,8 @@ export const image = (cb) => {
     return cb()
 }
 
-export const build = series(html, parallel(js, css))
-export default series(clean, build)
+export const build = series(clean, html, parallel(js, css))
+export default build
 export const serve = () => {
     connect.server({
         root: distPath,
@@ -100,7 +100,7 @@ export const serve = () => {
     })
 }
 
-export const dev  = series(clean , build, parallel (serve ,() => {
+export const dev  = series(build, parallel (serve ,() => {
         console.log("Watching: " , htmlFiles, imgPath, jsPath, scssPath)
         watch(htmlPath, series(html, css))
         watch(imgPath, image)
