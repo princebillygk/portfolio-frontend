@@ -1,0 +1,11 @@
+.floating-button {
+    @include mat-shadow(5);
+    position: fixed;
+    transition: all 400ms ease-in-out;
+    right: 30px;
+    bottom: -100px;
+}
+
+.active-floating-button{
+    bottom: 30px;
+}
