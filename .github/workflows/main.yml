@@ -1,9 +1,8 @@
-on: 
+on:
   push:
-    branches:
-      - gh-pages
-
-name: 🚀 Deploy website on push
+    branches:    
+      - 'gh-pages'
+name: Pushing to FTP
 jobs:
   web-deploy:
     name: 🎉 Deploy
