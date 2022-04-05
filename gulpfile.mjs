@@ -92,7 +92,7 @@ export const image = (cb) => {
     return cb()
 }
 
-export const build = series(html, parallel(js, image, css))
+export const build = series(js, html, image, css)
 export default build
 export const serve = () => {
     connect.server({
@@ -109,7 +109,7 @@ export const dev  = series(build, parallel (serve ,() => {
         watch(scssPath, css)
 }))
 
-export const deploy = series(clean, () =>
+export const deploy = series(clean,build, () =>
     src(path.join(distPath, './**/*'))
         .pipe(gh()))
 
