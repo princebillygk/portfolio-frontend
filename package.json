@@ -7,9 +7,10 @@
   "author": "princebillygk <princebillygk@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "gulp build",
+    "build": "gulp clean && gulp build",
     "start": "gulp dev",
-    "clean": "gulp clean"
+    "clean": "gulp clean",
+    "deploy": "gulp clean && gulp build && gulp deploy"
   },
   "dependencies": {
     "gulp-purifycss": "^0.2.0",

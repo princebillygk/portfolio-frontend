@@ -110,8 +110,6 @@ export const dev  = series(build, parallel (serve ,() => {
 }))
 
 export const deploy =  (cb) =>{
-    clean(cb)
-    build(cb)
     src(path.join(distPath, './**/*'))
         .pipe(gh())
     cb()
