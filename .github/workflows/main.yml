@@ -1,4 +1,6 @@
 on: push
+  branches:
+    - gh-pages
 name: 🚀 Deploy website on push
 jobs:
   web-deploy:
@@ -13,6 +15,8 @@ jobs:
       with:
         server: ftp.cse1617a.site
         username: cse44@cse1617a.site
-        password: ${{ secrets.FTP_PASS}}
+        password: ${{ secrets.FTP_PASSWORD}}
         server-dir: ./cv/
-        local-dir: .publish/
+        local-dir: ./
+        exclude: |
+          **/.git*
