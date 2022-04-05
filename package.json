@@ -12,6 +12,7 @@
     "clean": "gulp clean"
   },
   "dependencies": {
+    "gulp-purifycss": "^0.2.0",
     "l": "^0.6.0",
     "normalize.css": "^8.0.1",
     "reset-css": "^5.0.1"
@@ -32,7 +33,6 @@
     "gulp-uglify": "^3.0.2",
     "postcss": "^8.4.12",
     "postcss-uncss": "^0.17.0",
-    "sass": "^1.49.9",
-    "uncss": "^0.17.3"
+    "sass": "^1.49.9"
   }
 }

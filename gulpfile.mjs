@@ -12,7 +12,7 @@ import imgmin from 'gulp-imagemin'
 
 import gsass from 'gulp-sass'
 import dsass from 'sass'
-import uncss from 'postcss-uncss'
+import purify from 'gulp-purifycss'
 import cssnano from 'cssnano'
 import pcss from 'gulp-postcss'
 
@@ -55,7 +55,7 @@ export const css = (cb) => {
             return 'Sass Compilation Error: ' + e
         }))
         .pipe(concat('style.css'))
-        // .pipe(pcss([uncss({ html: htmlFiles })]))
+        .pipe(purify([destination(htmlPath), destination(jsPath)]))
         .pipe(dest(destination('./css')))
         .pipe(pcss([cssnano]))
         .pipe(rename({ suffix: '.min' }))
@@ -92,7 +92,7 @@ export const image = (cb) => {
     return cb()
 }
 
-export const build = series(js, html, image, css)
+export const build = series(js, image, html,  css)
 export default build
 export const serve = () => {
     connect.server({
@@ -109,7 +109,12 @@ export const dev  = series(build, parallel (serve ,() => {
         watch(scssPath, css)
 }))
 
-export const deploy = () =>
+export const deploy =  (cb) =>{
+    clean(cb)
+    build(cb)
     src(path.join(distPath, './**/*'))
         .pipe(gh())
+    cb()
+}
+
 
