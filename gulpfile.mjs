@@ -40,7 +40,8 @@ const imgPath = source('./assets/img/**/*.{png,gif,jpg,webp,ico}')
 // console.log(scssPath, jsPath, htmlPath, imgPath)
 
 
-const htmlFiles = source('index.html')
+const htmlFiles = source('index.html');
+const destHtmlFiles = destination('index.html')
 
 export const clean = (cb) => {
     del('dist')
@@ -54,7 +55,7 @@ export const css = (cb) => {
             return 'Sass Compilation Error: ' + e
         }))
         .pipe(concat('style.css'))
-        .pipe(pcss([uncss({ html: htmlFiles })]))
+        // .pipe(pcss([uncss({ html: htmlFiles })]))
         .pipe(dest(destination('./css')))
         .pipe(pcss([cssnano]))
         .pipe(rename({ suffix: '.min' }))
@@ -91,7 +92,7 @@ export const image = (cb) => {
     return cb()
 }
 
-export const build = series(clean, html, parallel(js, css))
+export const build = series(html, parallel(js, image, css))
 export default build
 export const serve = () => {
     connect.server({
