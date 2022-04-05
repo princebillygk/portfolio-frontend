@@ -55,7 +55,7 @@ export const css = (cb) => {
             return 'Sass Compilation Error: ' + e
         }))
         .pipe(concat('style.css'))
-        .pipe(purify([destination(htmlPath), destination(jsPath)]))
+        .pipe(purify([htmlPath,jsPath]))
         .pipe(dest(destination('./css')))
         .pipe(pcss([cssnano]))
         .pipe(rename({ suffix: '.min' }))
