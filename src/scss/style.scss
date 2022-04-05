@@ -143,6 +143,8 @@ header {
     padding: 10px 50px;
 
     nav ul {
+        display: flex;
+        align-items: stretch;
         li a {
             display: inline-block;
             padding: 5px;
@@ -150,7 +152,11 @@ header {
             border-radius: 3px;
             color: $color-orange;
             transition: all 400ms ease-in-out;
-
+            text-transform: uppercase;
+            font: {
+                family: $font-family-title;
+                weight: 800;
+            }
             &:hover {
                 background-color: $color-orange;
                 color: white;
@@ -170,7 +176,6 @@ header {
             }
         }
 
-        display: flex;
     }
 
 }

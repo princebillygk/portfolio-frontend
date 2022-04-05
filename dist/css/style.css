@@ -196,6 +196,7 @@ header .branding img {
 }
 header nav ul {
   display: flex;
+  align-items: stretch;
 }
 header nav ul li a {
   display: inline-block;
@@ -204,6 +205,9 @@ header nav ul li a {
   border-radius: 3px;
   color: #efa12f;
   transition: all 400ms ease-in-out;
+  text-transform: uppercase;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 800;
 }
 header nav ul li a:hover {
   background-color: #efa12f;
