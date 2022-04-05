@@ -1,7 +1,5 @@
-on:
-  push:
-    branches:    
-      - 'gh-pages'
+on: 
+  page_build
 name: Pushing to FTP
 jobs:
   web-deploy:
