@@ -109,7 +109,7 @@ export const dev  = series(build, parallel (serve ,() => {
         watch(scssPath, css)
 }))
 
-export const deploy = series(clean,build, () =>
+export const deploy = () =>
     src(path.join(distPath, './**/*'))
-        .pipe(gh()))
+        .pipe(gh())
 
