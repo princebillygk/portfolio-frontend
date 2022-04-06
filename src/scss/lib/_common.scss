@@ -2,27 +2,34 @@ html {
     scroll-behavior: smooth;
 }
 
+main {
+    padding: 50px;
+}
+
 a {
     text-decoration: none;
 }
 
 @for $index from 1 through 6 {
     h#{$index} {
-        font-family: $font-family-title;
+        font: {
+            size: 1em + .17em *(7-$index);
+            weight: 800;
+            family: $font-family-title;
+        }
         margin: 10px 0;
     }
 }
 
 h1 {
     color: $color-black;
-
-    font: {
-        size: 2em;
-        weight: 800;
-    }
 }
 
 h3 {
+    color: $color-blue;
+}
+
+h5 {
     color: $color-orange;
 }
 

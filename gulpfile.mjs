@@ -8,6 +8,11 @@ import notify from 'gulp-notify'
 import del from 'del'
 import connect from 'gulp-connect'
 
+import ftp from 'vinyl-ftp'
+import gutil from 'gulp-util'
+import debug from 'gulp-debug'
+import 'dotenv/config'
+
 import imgmin from 'gulp-imagemin'
 
 import gsass from 'gulp-sass'
@@ -109,9 +114,27 @@ export const dev  = series(build, parallel (serve ,() => {
         watch(scssPath, css)
 }))
 
-export const deploy =  (cb) =>{
+export const ghpages =  (cb) =>{
     src(path.join(distPath, './**/*'))
         .pipe(gh())
+    cb()
+}
+
+// Uploads website to shared hosting
+export const host = (cb) => {
+    const conn = ftp.create({
+        host:     process.env.FTP_HOST,
+        user:     process.env.FTP_USR,
+        password: process.env.FTP_PASS,
+        parallel: 10,
+        log:      gutil.log
+    })
+ 
+    conn.rmdir("./cv/", cb)
+
+    src(".publish/**/*",  {buffer: false })
+    .pipe(debug())
+    .pipe(conn.dest("./cv/"))
     cb()
 }
 
