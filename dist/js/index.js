@@ -27,8 +27,8 @@ const fixNavOnScroll = (sy) => {
 //functions
 const fixFloatingButton= (sy) => {
     if(sy > mainNav.offsetTop)  {
-        moveToTopBtn.classList.add("active-floating-button")
+        moveToTopBtn.classList.add("active-floating-btn")
     } else {
-        moveToTopBtn.classList.remove("active-floating-button")
+        moveToTopBtn.classList.remove("active-floating-btn")
     }
 }

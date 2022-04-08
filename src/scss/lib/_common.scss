@@ -2,6 +2,10 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    font-family: $font-family-regular;
+}
+
 main {
     padding: 50px;
 }
@@ -17,6 +21,7 @@ a {
             weight: 800;
             family: $font-family-title;
         }
+
         margin: 10px 0;
     }
 }
@@ -48,21 +53,42 @@ h5 {
     }
 }
 
-.button {
-    background-color: white;
-    color: $color-blue;
+.btn {
     border: none;
-    @include mat-shadow(2);
-    padding: 10px 20px;
-    border-radius: 5px;
+    background-color: white;
+    padding: 10px;
     transition: box-shadow 500ms;
-    text-transform: uppercase;
+    @include mat-shadow(2);
 
-    font: {
-        family: $font-family-title;
-        size: 12pt;
-        weight: 800;
+    &:active {
+        span {
+            color: $color-choclate;
+        }
     }
+
+    span {
+        vertical-align: middle;
+    }
+
+    .btn-icon {
+        color: $color-orange;
+        font-size: 16pt;
+        &+.btn-text {
+            margin-left: 3px;
+        }
+    }
+
+    .btn-text {
+        text-transform: uppercase;
+        color: $color-blue;
+        font: {
+            family: $font-family-title;
+            weight: 800;
+            size: 12pt;
+        }
+
+    }
+
 
     &:hover {
         @include mat-shadow(1);

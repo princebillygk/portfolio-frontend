@@ -3,7 +3,7 @@
    License: none (public domain)
 */
 
-html,body,div,h1,h2,h3,h4,h5,h6,p,a,address,code,img,q,i,ul,li,figure,figcaption,header,main,nav,section {
+html,body,div,span,h1,h2,h3,h4,h5,h6,p,a,address,code,img,q,i,ul,li,figure,figcaption,header,main,nav,section {
   margin: 0;
   padding: 0;
   border: 0;
@@ -43,6 +43,10 @@ q:before,q:after {
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Lato", sans-serif;
 }
 
 main {
@@ -119,25 +123,44 @@ h5 {
   border-color: #ecf7ee;
 }
 
-.button {
-  background-color: white;
-  color: #137ca7;
+.btn {
   border: none;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  padding: 10px 20px;
-  border-radius: 5px;
+  background-color: white;
+  padding: 10px;
   transition: box-shadow 500ms;
-  text-transform: uppercase;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 12pt;
-  font-weight: 800;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
-.button:hover {
+.btn:active span {
+  color: #4c2012;
+}
+
+.btn span {
+  vertical-align: middle;
+}
+
+.btn .btn-icon {
+  color: #efa12f;
+  font-size: 16pt;
+}
+
+.btn .btn-icon + .btn-text {
+  margin-left: 3px;
+}
+
+.btn .btn-text {
+  text-transform: uppercase;
+  color: #137ca7;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 800;
+  font-size: 12pt;
+}
+
+.btn:hover {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-.button:active {
+.btn:active {
   background-color: #ecf7ee;
   color: #efa12f;
 }
@@ -267,9 +290,9 @@ nav.main-nav ul {
 
 nav.main-nav ul li a {
   display: block;
-  transition: all 1s ease-in-out;
+  transition: box-shadow 400ms ease-in-out;
   padding: 10px;
-  color: #4c2012;
+  color: #137ca7;
   text-transform: uppercase;
   font-family: "IBM Plex Mono", monospace;
   font-weight: 600;
@@ -277,8 +300,15 @@ nav.main-nav ul li a {
 
 nav.main-nav ul li a:hover {
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  color: #efa12f;
   border-radius: 10px 10px 0 0;
   font-weight: 800;
+}
+
+nav.main-nav ul li a:active {
+  color: #4c2012;
+  background-color: #ecf7ee;
+  box-shadow: none;
 }
 
 .sticky-nav {
@@ -286,17 +316,31 @@ nav.main-nav ul li a:hover {
   position: fixed;
   top: 0;
   width: 100%;
+  border-bottom: 3px solid #efa12f;
 }
 
-.floating-button {
+.floating-btn {
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  border-radius: 30%;
+  background-color: #efa12f;
   position: fixed;
-  transition: all 400ms ease-in-out;
-  right: 30px;
   bottom: -100px;
+  right: 30px;
 }
 
-.active-floating-button {
+.floating-btn .btn-icon {
+  color: #ecf7ee;
+  padding: 0px;
+  margin: 0px;
+}
+
+.floating-btn .btn-icon i {
+  font-size: 24pt;
+  padding: 0px;
+  margin: 0px;
+}
+
+.active-floating-btn {
   bottom: 30px;
 }
 
@@ -319,4 +363,24 @@ section#under-construction h1 i {
 
 .exp {
   margin: 50px 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 70px 0px 20px 0;
+}
+
+.header .desgination {
+  display: flex;
+}
+
+.header .desgination .company-logo {
+  width: 64px;
+  height: 64px;
+  padding-right: 20px;
+}
+
+.header .desgination .company-logo img {
+  width: 100%;
 }
