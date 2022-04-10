@@ -165,6 +165,10 @@ h5 {
   color: #efa12f;
 }
 
+.btn-group {
+  display: inline-flex;
+}
+
 .btn-group:hover .btn {
   background-color: whitesmoke;
 }
@@ -259,11 +263,11 @@ section#hero {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-  padding: 20px 50px;
+  padding: 30px 50px;
 }
 
-section#hero div[class^=hero-] {
-  margin: 10px 0;
+section#hero .hero-left .btn-group {
+  margin-top: 30px;
 }
 
 section#hero figure.my-photo {
@@ -399,6 +403,7 @@ section#under-construction h1 i {
 
 .header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   margin: 70px 0px 20px 0;
 }

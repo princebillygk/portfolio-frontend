@@ -8,10 +8,12 @@ section#hero {
 
     align-items: center;
     justify-content: space-around;
-    padding: 20px 50px;
+    padding: 30px 50px;
 
-    div[class^="hero-"] {
-        margin: 10px 0;
+    .hero-left {
+        .btn-group {
+            margin-top: 30px;
+        }
     }
 
     figure.my-photo {

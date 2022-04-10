@@ -103,6 +103,7 @@ h5 {
 }
 
 .btn-group {
+    display: inline-flex;
     &:hover {
         .btn {
             background-color: rgb(245, 245, 245);

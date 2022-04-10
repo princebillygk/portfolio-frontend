@@ -4,11 +4,13 @@
 
 .header {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     margin: 70px 0px 20px 0;
 
     .desgination {
         display: flex;
+
         .company-logo {
             width: 64px;
             height: 64px;
