@@ -165,6 +165,34 @@ h5 {
   color: #efa12f;
 }
 
+.btn-group:hover .btn {
+  background-color: whitesmoke;
+}
+
+.btn-group:hover .btn span {
+  color: gray;
+}
+
+.btn-group .btn:first-child {
+  margin-right: 3px;
+}
+
+.btn-group .btn:not(:first-child, :last-child) {
+  margin: 0 3px;
+}
+
+.btn-group .btn:last-child {
+  margin-left: 3px;
+}
+
+.btn-group .btn:hover {
+  background-color: white;
+}
+
+.btn-group .btn:hover span {
+  color: #efa12f;
+}
+
 header {
   display: flex;
   align-items: center;

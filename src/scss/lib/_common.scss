@@ -73,6 +73,7 @@ h5 {
     .btn-icon {
         color: $color-orange;
         font-size: 16pt;
+
         &+.btn-text {
             margin-left: 3px;
         }
@@ -81,6 +82,7 @@ h5 {
     .btn-text {
         text-transform: uppercase;
         color: $color-blue;
+
         font: {
             family: $font-family-title;
             weight: 800;
@@ -97,5 +99,38 @@ h5 {
     &:active {
         background-color: $color-faded-green;
         color: $color-orange;
+    }
+}
+
+.btn-group {
+    &:hover {
+        .btn {
+            background-color: rgb(245, 245, 245);
+            span {
+                color: gray;
+            }
+        }
+    }
+
+    .btn {
+        &:first-child {
+            margin-right: 3px;
+        }
+
+        &:not(:first-child, :last-child) {
+            margin: 0 3px;
+        }
+
+        &:last-child {
+            margin-left: 3px;
+        }
+
+        &:hover {
+            background-color: white;
+            span{
+                color: $color-orange;
+            }
+        }
+
     }
 }
