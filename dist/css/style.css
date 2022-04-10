@@ -189,8 +189,12 @@ h5 {
   background-color: white;
 }
 
-.btn-group .btn:hover span {
+.btn-group .btn:hover .btn-icon {
   color: #efa12f;
+}
+
+.btn-group .btn:hover .btn-text {
+  color: #137ca7;
 }
 
 header {

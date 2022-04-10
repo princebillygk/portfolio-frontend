@@ -106,6 +106,7 @@ h5 {
     &:hover {
         .btn {
             background-color: rgb(245, 245, 245);
+
             span {
                 color: gray;
             }
@@ -127,8 +128,13 @@ h5 {
 
         &:hover {
             background-color: white;
-            span{
+
+            .btn-icon {
                 color: $color-orange;
+            }
+
+            .btn-text {
+                color: $color-blue;
             }
         }
 
