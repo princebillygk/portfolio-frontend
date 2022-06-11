@@ -163,12 +163,10 @@ h5 {
         margin: $s;
     }
     .mx-#{$i} {
-        margin-left: $s;
-        margin-right: $s;
+        @include spaceX(margin, $s);
     }
     .my-#{$i} {
-        margin-top: $s;
-        margin-bottom: $s;
+        @include spaceY(margin, $s);
     }
     .mt-#{$i} {
         margin-top: $s;
@@ -188,12 +186,10 @@ h5 {
         padding: $s;
     }
     .px-#{$i} {
-        padding-left: $s;
-        padding-right: $s;
+        @include spaceX(padding, $s);
     }
     .py-#{$i} {
-        padding-top: $s;
-        padding-bottom: $s;
+        @include spaceY(padding, $s);
     }
     .pt-#{$i} {
         padding-top: $s;
@@ -207,5 +203,23 @@ h5 {
     .pl-#{$i} {
         padding-left: $s;
     }
+}
 
+.flex-col-grp {
+    $min-space: nth($space-values, 5);
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    .flex-col:not(:last-child,:first-child) {
+        @include spaceX(margin, $min-space);
+    }
+    .flex-col:first-child {
+        margin-right: $min-space;
+    }
+    .flex-col:last-child {
+        margin-left: $min-space;
+    }
+    flex-col-max {
+        flex-grow: 1;
+    }
 }

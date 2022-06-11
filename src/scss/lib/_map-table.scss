@@ -1,0 +1,23 @@
+.map-table {
+    $cellX-gap: nth($space-values, 1);
+    $cellY-gap: nth($space-values, 4);
+
+    text-align: left;
+    vertical-align: top;
+
+    tr:not(tr:last-child) {
+        border-bottom: 2px solid $color-blue;
+    }
+
+    th, td {
+        @include spaceY(padding, $cellY-gap);
+    }
+
+    th {
+        font-weight: bold;
+        padding-right: $cellX-gap;
+    }
+    td {
+        padding-left: $cellX-gap;
+    }
+}

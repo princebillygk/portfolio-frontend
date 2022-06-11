@@ -3,7 +3,7 @@
    License: none (public domain)
 */
 
-html,body,div,span,h1,h2,h3,h4,h5,h6,p,a,address,code,img,q,i,ul,li,figure,figcaption,header,main,nav,section {
+html,body,div,span,h1,h2,h3,h4,h5,h6,p,a,address,code,img,q,i,ul,li,table,tr,th,td,figure,figcaption,header,main,nav,section {
   margin: 0;
   padding: 0;
   border: 0;
@@ -39,6 +39,11 @@ q {
 q:before,q:after {
   content: "";
   content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 html {
@@ -252,16 +257,16 @@ h5 {
 }
 
 .my-3 {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .mt-3 {
-  margin-top: 5rem;
+  margin-top: 0.5rem;
 }
 
 .p-3 {
-  padding: 5rem;
+  padding: 0.5rem;
 }
 
 .my-4 {
@@ -301,6 +306,29 @@ h5 {
 
 .p-6 {
   padding: 3rem;
+}
+
+.flex-col-grp {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.flex-col-grp .flex-col:not(:last-child, :first-child) {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.flex-col-grp .flex-col:first-child {
+  margin-right: 1.5rem;
+}
+
+.flex-col-grp .flex-col:last-child {
+  margin-left: 1.5rem;
+}
+
+.flex-col-grp flex-col-max {
+  flex-grow: 1;
 }
 
 header {
@@ -526,7 +554,7 @@ section#under-construction h1 i {
 
 .portfolio-gallery {
   display: inline-grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto;
   gap: 10px;
 }
 
@@ -569,4 +597,27 @@ section#under-construction h1 i {
   transform: translate(-50%, -50%);
   font-weight: bold;
   color: #fff;
+}
+
+.map-table {
+  text-align: left;
+  vertical-align: top;
+}
+
+.map-table tr:not(tr:last-child) {
+  border-bottom: 2px solid #137ca7;
+}
+
+.map-table th,.map-table td {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.map-table th {
+  font-weight: bold;
+  padding-right: 0;
+}
+
+.map-table td {
+  padding-left: 0;
 }
