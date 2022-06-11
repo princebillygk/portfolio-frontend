@@ -234,6 +234,10 @@ h5 {
   list-style: disc inside url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABmJLR0QA/wD/AP+gvaeTAAAB90lEQVQokW2SXUhTcQDFz/9/P5tzwdpWU2IL1rJMUhaVUDkKNKTemvTxkOAIg4166AOiB596Cx+M6AMyip4Kkh5ioRH5oghz2TBwLEHZZnTXipy7d/d/d28Plfmw39vhnJfDOUAdAoG41NoaEf9KAgxR/BfrkDOHB+Mtsj2yVZCaKAiX17X8yqZSmaOYuv/68RAAcP/C0aOx0UGP72qbbbNfaeAMwS7zXaJjl+H50fi1UvOGgu3e5MLHSR4Azh+5FBvw+M4VbLSkde+p9fZ0eilHMXzn+UoqJUuntqNprlA7BAA8AAQle0QilNNPtLH9oRb3sxsPskVi0mW71NDRsbvamalsUyoFCYBFw+F+eQsvNn8SjNLxnoPN48MvF4+tcoGMyRw7VLZ2+cpZb1owii5B9odCFwWayzValBCeUMsyTQvMMKmDCrhVtrmcJmdasP6UJKAAQLPZkarCqkt7dd71fnwm33utz//GwTJTLm7h5PU+30RiutDOeLfC9MVk8iHjAWBeXX3VXXMfEBJpcRbWt77bA0ECgndvp3O2ic/immWqX7TK2MYdSLQr9jTq9p0WCZHTgvHdIhb2MdGpmjVtVFl+8ejD3Qsbd8Ds0syY6typFllV5HXDpmu6lir/nEv8UkaeTN67We8R64TD/XIgEJfqeb8B187AMB3FNdoAAAAASUVORK5CYII=");
 }
 
+.list-man-think {
+  list-style: disc inside url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABmJLR0QA/wD/AP+gvaeTAAAB0UlEQVQokW2MQWjTYBiG3+9PmsUl3eaSVjedhzmEiaAeLCIIXsSTDkXBi1BPDvQsCApjDMSp9aKCrCB4Eg8qjMEQFAQniOLwpDJbdRm1W9OubZombfbn9zBbhvrAe3m/73lpLPlQ1fbsuM9NI0FEAnbp3RBsS1fZWVlmir+GbKFUGU1eS2YAgCZvv7obHEpchCwDAMA5Bj++xm5jDY4TQJIk+AFErRneOn7p1GW6MfX+hdA6j4rNPQAAKpVhejb2R3Lrfgj4AYMsqeKbVUkwVl79EA5sD0PTQGgaCAe2oYvXUfQiKLsEzgUkCWAyR4RFxmXXfXu1c05wYfQe1hU62Ks0O0ZO7wIxgl8PQIzg1QL8+GrPV+e+jBD+MP1gejzWp12Qolq8L74J8X4dAOA6DYAIv6yqu/h5eVZuCT3d8pG9B2JxSdVQyDloQ+ubg0NRzckX97FWn7Pcmz8zVQsAYv3R9r+mK9B0BYV8vbhsN6awkSep59f9YkY0V7P/ZCY98wgA2EYh/72U+vRmYYX79XbHgwYW5rO16op3DwAIfzGbfnZuy9aO9M7hboWIYTFTDpeWgslj509c+a8AAE/vPB7uMvUUI6iVmjdxcvTMy9btN+nAxtnGvsrKAAAAAElFTkSuQmCC");
+}
+
 .my-1 {
   margin-top: 0;
   margin-bottom: 0;
@@ -245,6 +249,10 @@ h5 {
 
 .p-1 {
   padding: 0;
+}
+
+.pb-1 {
+  padding-bottom: 0;
 }
 
 .my-2 {
@@ -260,6 +268,10 @@ h5 {
   padding: 0.25rem;
 }
 
+.pb-2 {
+  padding-bottom: 0.25rem;
+}
+
 .my-3 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -271,6 +283,10 @@ h5 {
 
 .p-3 {
   padding: 0.5rem;
+}
+
+.pb-3 {
+  padding-bottom: 0.5rem;
 }
 
 .my-4 {
@@ -286,6 +302,10 @@ h5 {
   padding: 1rem;
 }
 
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
 .my-5 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -299,6 +319,10 @@ h5 {
   padding: 1.5rem;
 }
 
+.pb-5 {
+  padding-bottom: 1.5rem;
+}
+
 .my-6 {
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -310,6 +334,10 @@ h5 {
 
 .p-6 {
   padding: 3rem;
+}
+
+.pb-6 {
+  padding-bottom: 3rem;
 }
 
 .flex-col-grp {
