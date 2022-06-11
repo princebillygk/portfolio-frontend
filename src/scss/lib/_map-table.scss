@@ -1,12 +1,12 @@
 .map-table {
-    $cellX-gap: nth($space-values, 1);
-    $cellY-gap: nth($space-values, 4);
+    $cellX-gap: 5px;
+    $cellY-gap: 10px;
 
     text-align: left;
     vertical-align: top;
 
     tr:not(tr:last-child) {
-        border-bottom: 2px solid $color-blue;
+        border-bottom: 1px solid $color-blue;
     }
 
     th, td {

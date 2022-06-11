@@ -62,42 +62,42 @@ a {
   text-decoration: none;
 }
 
-h1 {
+h1,.h1 {
   font-size: 2.02em;
   font-weight: 800;
   font-family: "IBM Plex Mono", monospace;
   margin: 10px 0;
 }
 
-h2 {
+h2,.h2 {
   font-size: 1.85em;
   font-weight: 800;
   font-family: "IBM Plex Mono", monospace;
   margin: 10px 0;
 }
 
-h3 {
+h3,.h3 {
   font-size: 1.68em;
   font-weight: 800;
   font-family: "IBM Plex Mono", monospace;
   margin: 10px 0;
 }
 
-h4 {
+h4,.h4 {
   font-size: 1.51em;
   font-weight: 800;
   font-family: "IBM Plex Mono", monospace;
   margin: 10px 0;
 }
 
-h5 {
+h5,.h5 {
   font-size: 1.34em;
   font-weight: 800;
   font-family: "IBM Plex Mono", monospace;
   margin: 10px 0;
 }
 
-h6 {
+h6,.h6 {
   font-size: 1.17em;
   font-weight: 800;
   font-family: "IBM Plex Mono", monospace;
@@ -226,8 +226,12 @@ h5 {
   column-count: 6;
 }
 
-.bullet-list {
-  list-style: disc inside url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABmJLR0QA/wD/AP+gvaeTAAAAo0lEQVQYlZXOvQqBcRTH8Y+XKPVk9VIWDFIuQRldgFsQs8EFWAzMitlgMSmbG3AbymKxGJSy/J96PJuznM45387vm/NbPQxQww2f+JANvYwdRnihiSP6qUe26KR2BexRScYtUlAVY7Sxgjy6uKKBEp7YYIo76jH4QAsXrEPkJEAR3nFMEacAREknzDFMOvWDeDvMUYCWMZBJwBXMgtMbB5z9W1/xkBhmMT9NAgAAAABJRU5ErkJggg==");
+.list-tick {
+  list-style: disc inside url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABmJLR0QA/wD/AP+gvaeTAAABPElEQVQokZWRvUuCcRDHPz/NePRRKtOgIqKiaO5l03ANlKK1f6ChglqCKGgoCAeHKGippa01peZ0KqNdoQx6A5GWREx7rsGHJ4VnqNvuuO/nvncH/wzVnITzqTmENZAps3QrShKZ0djFcq8siaAswUwuuS+wYUf1bY1cD6fHQyiOnRYZDm0txIM8nJUH9X7X3VDBu+AAaNiAet4J9abmgyDPJ3X8Ax6K5/flHZTRECCT8qkoLuqUVnXkCxynAV6OvvH3efBcvoLbmABos2heoSteobSiU4p2Unsy6AhouJNvSLs0fADmBLIAWqRGd7xCtQAuzYF+9Q66YRIla00QJQklKgKgzVbpeXTjnP8An/G7kKhEyx/C+eQewqbdpQTZzYzFtlsEAKFcKorIulJMmzZuEJVIj0VTdqA/xQ+JumrecYHWPwAAAABJRU5ErkJggg==");
+}
+
+.list-goal {
+  list-style: disc inside url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABmJLR0QA/wD/AP+gvaeTAAAB90lEQVQokW2SXUhTcQDFz/9/P5tzwdpWU2IL1rJMUhaVUDkKNKTemvTxkOAIg4166AOiB596Cx+M6AMyip4Kkh5ioRH5oghz2TBwLEHZZnTXipy7d/d/d28Plfmw39vhnJfDOUAdAoG41NoaEf9KAgxR/BfrkDOHB+Mtsj2yVZCaKAiX17X8yqZSmaOYuv/68RAAcP/C0aOx0UGP72qbbbNfaeAMwS7zXaJjl+H50fi1UvOGgu3e5MLHSR4Azh+5FBvw+M4VbLSkde+p9fZ0eilHMXzn+UoqJUuntqNprlA7BAA8AAQle0QilNNPtLH9oRb3sxsPskVi0mW71NDRsbvamalsUyoFCYBFw+F+eQsvNn8SjNLxnoPN48MvF4+tcoGMyRw7VLZ2+cpZb1owii5B9odCFwWayzValBCeUMsyTQvMMKmDCrhVtrmcJmdasP6UJKAAQLPZkarCqkt7dd71fnwm33utz//GwTJTLm7h5PU+30RiutDOeLfC9MVk8iHjAWBeXX3VXXMfEBJpcRbWt77bA0ECgndvp3O2ic/immWqX7TK2MYdSLQr9jTq9p0WCZHTgvHdIhb2MdGpmjVtVFl+8ejD3Qsbd8Ds0syY6typFllV5HXDpmu6lir/nEv8UkaeTN67We8R64TD/XIgEJfqeb8B187AMB3FNdoAAAAASUVORK5CYII=");
 }
 
 .my-1 {
@@ -538,6 +542,10 @@ section#under-construction h1 i {
   margin: 70px 0px 20px 0;
 }
 
+.portfolio-item .header .left-txt {
+  text-align: right;
+}
+
 .portfolio-item .header .content {
   display: flex;
 }
@@ -605,19 +613,19 @@ section#under-construction h1 i {
 }
 
 .map-table tr:not(tr:last-child) {
-  border-bottom: 2px solid #137ca7;
+  border-bottom: 1px solid #137ca7;
 }
 
 .map-table th,.map-table td {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .map-table th {
   font-weight: bold;
-  padding-right: 0;
+  padding-right: 5px;
 }
 
 .map-table td {
-  padding-left: 0;
+  padding-left: 5px;
 }
