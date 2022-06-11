@@ -1,0 +1,24 @@
+.portfolio-item {
+    margin: 50px 0;
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 70px 0px 20px 0;
+
+        .content {
+            display: flex;
+
+            .content-logo {
+                width: 64px;
+                height: 64px;
+                padding-right: 20px;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

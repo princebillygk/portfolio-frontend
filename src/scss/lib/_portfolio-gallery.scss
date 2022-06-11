@@ -1,0 +1,47 @@
+.portfolio-gallery {
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px;
+
+    figure {
+        position: relative;
+        display: block;
+        height: 150px;
+        width: 150px;
+        overflow: hidden;
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+
+        &:hover {
+            .overlay {
+                top: 0%;
+            }
+            img {
+                filter: blur(4px);
+            }
+        }
+
+        .overlay {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: transparentize($color: #000000, $amount: 0.5);
+            transition: top 500ms;
+        }
+
+        figcaption {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+            color: #fff;
+        }
+    }
+}

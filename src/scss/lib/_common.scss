@@ -104,6 +104,7 @@ h5 {
 
 .btn-group {
     display: inline-flex;
+
     &:hover {
         .btn {
             background-color: rgb(245, 245, 245);
@@ -140,4 +141,71 @@ h5 {
         }
 
     }
+}
+
+
+// Mulitcolumn
+@for $n from 2 through 6 {
+    .mc-#{$n} {
+        column-count: $n;
+    }
+}
+
+.bullet-list {
+    list-style: disc inside url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABmJLR0QA/wD/AP+gvaeTAAAAo0lEQVQYlZXOvQqBcRTH8Y+XKPVk9VIWDFIuQRldgFsQs8EFWAzMitlgMSmbG3AbymKxGJSy/J96PJuznM45387vm/NbPQxQww2f+JANvYwdRnihiSP6qUe26KR2BexRScYtUlAVY7Sxgjy6uKKBEp7YYIo76jH4QAsXrEPkJEAR3nFMEacAREknzDFMOvWDeDvMUYCWMZBJwBXMgtMbB5z9W1/xkBhmMT9NAgAAAABJRU5ErkJggg==");
+}
+
+// spacing
+@for $i from 1 through length($space-values) {
+    $s: nth($space-values, $i);
+
+    .m-#{$i} {
+        margin: $s;
+    }
+    .mx-#{$i} {
+        margin-left: $s;
+        margin-right: $s;
+    }
+    .my-#{$i} {
+        margin-top: $s;
+        margin-bottom: $s;
+    }
+    .mt-#{$i} {
+        margin-top: $s;
+    }
+    .mr-#{$i} {
+        margin-right: $s;
+    }
+    .mb-#{$i} {
+        margin-bottom: $s;
+    }
+    .ml-#{$i} {
+        margin-left: $s;
+    }
+
+    // paddings
+    .p-#{$i} {
+        padding: $s;
+    }
+    .px-#{$i} {
+        padding-left: $s;
+        padding-right: $s;
+    }
+    .py-#{$i} {
+        padding-top: $s;
+        padding-bottom: $s;
+    }
+    .pt-#{$i} {
+        padding-top: $s;
+    }
+    .pr-#{$i} {
+        padding-right: $s;
+    }
+    .pb-#{$i} {
+        padding-bottom: $s;
+    }
+    .pl-#{$i} {
+        padding-left: $s;
+    }
+
 }
