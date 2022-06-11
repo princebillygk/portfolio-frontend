@@ -1,0 +1,21 @@
+.portfolio-certificates {
+    display: flex;
+    flex-wrap: wrap;
+
+    figure.certificate {
+        padding-bottom: 30px; 
+        display: inline-block;
+        margin: auto;
+        img {
+            max-width: 300px;
+            max-height: 250px;
+            min-width: 300px;
+            min-height: 250px;
+        }
+
+        figcaption {
+            text-align: center;
+        }
+    }
+
+}

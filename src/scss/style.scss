@@ -12,5 +12,9 @@
 
 @import "./lib/portfolio-item";
 @import "./lib/portfolio-gallery";
+@import "./lib/portfolio-certificate";
 @import "./lib/map-table";
 
+section > h2 {
+    padding-bottom: 50px;
+}

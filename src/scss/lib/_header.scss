@@ -1,7 +1,9 @@
 header {
+    padding: 10px 50px;
     display: flex;
     align-items: center;
     justify-content:space-between;
+
     .branding{
         display: flex;
         align-items: center;
@@ -16,7 +18,6 @@ header {
             weight: 800;
         }
     }
-    padding: 10px 50px;
 
     nav ul {
         display: flex;
