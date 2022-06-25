@@ -1,6 +1,14 @@
 //constants
 const mainNav = document.getElementById("mainNav")
 const moveToTopBtn = document.getElementById("moveToTopBtn")
+const iconLsItem = document.querySelector(".icon-ls-item>li")
+
+document.onload() = () => {
+    icon = iconLsItem.getElementsByTagName(i)
+    iconLsItem.style.color = icon.style.color
+}
+
+
 
 // events
 window.onscroll = () => {

@@ -6,8 +6,13 @@ body {
     font-family: $font-family-regular;
 }
 
+
 main {
-    padding: 50px;
+    padding: 50px 15px;
+
+    @include mq-small {
+        @include spaceX(padding, 50px)
+    }
 }
 
 a {
@@ -15,7 +20,9 @@ a {
 }
 
 @for $index from 1 through 6 {
-    h#{$index}, .h#{$index} {
+
+    h#{$index},
+    .h#{$index} {
         font: {
             size: 1em + .17em *(7-$index);
             weight: 800;
@@ -58,6 +65,7 @@ h5 {
     background-color: white;
     padding: 10px;
     transition: box-shadow 500ms;
+    text-align: center;
     @include mat-shadow(2);
 
     &:active {
@@ -145,21 +153,14 @@ h5 {
 
 
 // Mulitcolumn
-@for $n from 2 through 6 {
-    .mc-#{$n} {
-        column-count: $n;
+@include mq-large {
+    @for $n from 2 through 6 {
+        .mc-#{$n} {
+            column-count: $n;
+        }
     }
 }
 
-.list-tick {
-    list-style: disc inside url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABmJLR0QA/wD/AP+gvaeTAAABPElEQVQokZWRvUuCcRDHPz/NePRRKtOgIqKiaO5l03ANlKK1f6ChglqCKGgoCAeHKGippa01peZ0KqNdoQx6A5GWREx7rsGHJ4VnqNvuuO/nvncH/wzVnITzqTmENZAps3QrShKZ0djFcq8siaAswUwuuS+wYUf1bY1cD6fHQyiOnRYZDm0txIM8nJUH9X7X3VDBu+AAaNiAet4J9abmgyDPJ3X8Ax6K5/flHZTRECCT8qkoLuqUVnXkCxynAV6OvvH3efBcvoLbmABos2heoSteobSiU4p2Unsy6AhouJNvSLs0fADmBLIAWqRGd7xCtQAuzYF+9Q66YRIla00QJQklKgKgzVbpeXTjnP8An/G7kKhEyx/C+eQewqbdpQTZzYzFtlsEAKFcKorIulJMmzZuEJVIj0VTdqA/xQ+JumrecYHWPwAAAABJRU5ErkJggg==");
-}
-.list-goal {
-    list-style: disc inside url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABmJLR0QA/wD/AP+gvaeTAAAB90lEQVQokW2SXUhTcQDFz/9/P5tzwdpWU2IL1rJMUhaVUDkKNKTemvTxkOAIg4166AOiB596Cx+M6AMyip4Kkh5ioRH5oghz2TBwLEHZZnTXipy7d/d/d28Plfmw39vhnJfDOUAdAoG41NoaEf9KAgxR/BfrkDOHB+Mtsj2yVZCaKAiX17X8yqZSmaOYuv/68RAAcP/C0aOx0UGP72qbbbNfaeAMwS7zXaJjl+H50fi1UvOGgu3e5MLHSR4Azh+5FBvw+M4VbLSkde+p9fZ0eilHMXzn+UoqJUuntqNprlA7BAA8AAQle0QilNNPtLH9oRb3sxsPskVi0mW71NDRsbvamalsUyoFCYBFw+F+eQsvNn8SjNLxnoPN48MvF4+tcoGMyRw7VLZ2+cpZb1owii5B9odCFwWayzValBCeUMsyTQvMMKmDCrhVtrmcJmdasP6UJKAAQLPZkarCqkt7dd71fnwm33utz//GwTJTLm7h5PU+30RiutDOeLfC9MVk8iHjAWBeXX3VXXMfEBJpcRbWt77bA0ECgndvp3O2ic/immWqX7TK2MYdSLQr9jTq9p0WCZHTgvHdIhb2MdGpmjVtVFl+8ejD3Qsbd8Ds0syY6typFllV5HXDpmu6lir/nEv8UkaeTN67We8R64TD/XIgEJfqeb8B187AMB3FNdoAAAAASUVORK5CYII=");
-}
-.list-man-think {
-    list-style: disc inside url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABmJLR0QA/wD/AP+gvaeTAAAB0UlEQVQokW2MQWjTYBiG3+9PmsUl3eaSVjedhzmEiaAeLCIIXsSTDkXBi1BPDvQsCApjDMSp9aKCrCB4Eg8qjMEQFAQniOLwpDJbdRm1W9OubZombfbn9zBbhvrAe3m/73lpLPlQ1fbsuM9NI0FEAnbp3RBsS1fZWVlmir+GbKFUGU1eS2YAgCZvv7obHEpchCwDAMA5Bj++xm5jDY4TQJIk+AFErRneOn7p1GW6MfX+hdA6j4rNPQAAKpVhejb2R3Lrfgj4AYMsqeKbVUkwVl79EA5sD0PTQGgaCAe2oYvXUfQiKLsEzgUkCWAyR4RFxmXXfXu1c05wYfQe1hU62Ks0O0ZO7wIxgl8PQIzg1QL8+GrPV+e+jBD+MP1gejzWp12Qolq8L74J8X4dAOA6DYAIv6yqu/h5eVZuCT3d8pG9B2JxSdVQyDloQ+ubg0NRzckX97FWn7Pcmz8zVQsAYv3R9r+mK9B0BYV8vbhsN6awkSep59f9YkY0V7P/ZCY98wgA2EYh/72U+vRmYYX79XbHgwYW5rO16op3DwAIfzGbfnZuy9aO9M7hboWIYTFTDpeWgslj509c+a8AAE/vPB7uMvUUI6iVmjdxcvTMy9btN+nAxtnGvsrKAAAAAElFTkSuQmCC")
-}
 
 // spacing
 @for $i from 1 through length($space-values) {
@@ -168,21 +169,27 @@ h5 {
     .m-#{$i} {
         margin: $s;
     }
+
     .mx-#{$i} {
         @include spaceX(margin, $s);
     }
+
     .my-#{$i} {
         @include spaceY(margin, $s);
     }
+
     .mt-#{$i} {
         margin-top: $s;
     }
+
     .mr-#{$i} {
         margin-right: $s;
     }
+
     .mb-#{$i} {
         margin-bottom: $s;
     }
+
     .ml-#{$i} {
         margin-left: $s;
     }
@@ -191,44 +198,32 @@ h5 {
     .p-#{$i} {
         padding: $s;
     }
+
     .px-#{$i} {
         @include spaceX(padding, $s);
     }
+
     .py-#{$i} {
         @include spaceY(padding, $s);
     }
+
     .pt-#{$i} {
         padding-top: $s;
     }
+
     .pr-#{$i} {
         padding-right: $s;
     }
+
     .pb-#{$i} {
         padding-bottom: $s;
     }
+
     .pl-#{$i} {
         padding-left: $s;
     }
 }
 
-.flex-col-grp {
-    $min-space: nth($space-values, 5);
-    display: flex;
-    align-items: start;
-    justify-content: space-between;
-    .flex-col:not(:last-child,:first-child) {
-        @include spaceX(margin, $min-space);
-    }
-    .flex-col:first-child {
-        margin-right: $min-space;
-    }
-    .flex-col:last-child {
-        margin-left: $min-space;
-    }
-    flex-col-max {
-        flex-grow: 1;
-    }
-}
 
 section {
     margin-bottom: 100px;

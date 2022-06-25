@@ -1,22 +1,33 @@
 section#hero {
     display: flex;
     margin-bottom: 30px;
+    padding: 30px;
+    padding-top: 20px;
 
     flex: {
+        direction: column-reverse;
         wrap: wrap;
+    }
+    @include mq-large {
+        flex-direction: row;
+
     }
 
     align-items: center;
     justify-content: space-around;
-    padding: 30px 50px;
 
     .hero-left {
+        text-align: center;
         .btn-group {
-            margin-top: 30px;
+            margin-top: 20px;
+        }
+        @include mq-large {
+            text-align:left;
         }
     }
 
     figure.my-photo {
+        padding-bottom: 30px;
         position: relative;
         display: flex;
 
@@ -68,4 +79,5 @@ section#hero {
             opacity: 100%;
         }
     }
+
 }

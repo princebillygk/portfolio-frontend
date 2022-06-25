@@ -13,6 +13,20 @@ nav.main-nav {
             padding: 10px;
             color: $color-blue;
             text-transform: uppercase;
+            .symbol {
+                font-size: 18px;
+                @include mq-medium {
+                    margin-right: 3px;
+                }
+            }
+            .text {
+                display: none;
+                @include mq-medium {
+                    display: inline;
+                }
+            }
+
+
 
             font: {
                 family: $font-family-title;

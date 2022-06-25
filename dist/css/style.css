@@ -55,7 +55,14 @@ body {
 }
 
 main {
-  padding: 50px;
+  padding: 50px 15px;
+}
+
+@media only screen and (min-width: 576px) {
+  main {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
 }
 
 a {
@@ -133,6 +140,7 @@ h5 {
   background-color: white;
   padding: 10px;
   transition: box-shadow 500ms;
+  text-align: center;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
@@ -206,36 +214,26 @@ h5 {
   color: #137ca7;
 }
 
-.mc-2 {
-  column-count: 2;
-}
+@media only screen and (min-width: 992px) {
+  .mc-2 {
+    column-count: 2;
+  }
 
-.mc-3 {
-  column-count: 3;
-}
+  .mc-3 {
+    column-count: 3;
+  }
 
-.mc-4 {
-  column-count: 4;
-}
+  .mc-4 {
+    column-count: 4;
+  }
 
-.mc-5 {
-  column-count: 5;
-}
+  .mc-5 {
+    column-count: 5;
+  }
 
-.mc-6 {
-  column-count: 6;
-}
-
-.list-tick {
-  list-style: disc inside url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABmJLR0QA/wD/AP+gvaeTAAABPElEQVQokZWRvUuCcRDHPz/NePRRKtOgIqKiaO5l03ANlKK1f6ChglqCKGgoCAeHKGippa01peZ0KqNdoQx6A5GWREx7rsGHJ4VnqNvuuO/nvncH/wzVnITzqTmENZAps3QrShKZ0djFcq8siaAswUwuuS+wYUf1bY1cD6fHQyiOnRYZDm0txIM8nJUH9X7X3VDBu+AAaNiAet4J9abmgyDPJ3X8Ax6K5/flHZTRECCT8qkoLuqUVnXkCxynAV6OvvH3efBcvoLbmABos2heoSteobSiU4p2Unsy6AhouJNvSLs0fADmBLIAWqRGd7xCtQAuzYF+9Q66YRIla00QJQklKgKgzVbpeXTjnP8An/G7kKhEyx/C+eQewqbdpQTZzYzFtlsEAKFcKorIulJMmzZuEJVIj0VTdqA/xQ+JumrecYHWPwAAAABJRU5ErkJggg==");
-}
-
-.list-goal {
-  list-style: disc inside url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABmJLR0QA/wD/AP+gvaeTAAAB90lEQVQokW2SXUhTcQDFz/9/P5tzwdpWU2IL1rJMUhaVUDkKNKTemvTxkOAIg4166AOiB596Cx+M6AMyip4Kkh5ioRH5oghz2TBwLEHZZnTXipy7d/d/d28Plfmw39vhnJfDOUAdAoG41NoaEf9KAgxR/BfrkDOHB+Mtsj2yVZCaKAiX17X8yqZSmaOYuv/68RAAcP/C0aOx0UGP72qbbbNfaeAMwS7zXaJjl+H50fi1UvOGgu3e5MLHSR4Azh+5FBvw+M4VbLSkde+p9fZ0eilHMXzn+UoqJUuntqNprlA7BAA8AAQle0QilNNPtLH9oRb3sxsPskVi0mW71NDRsbvamalsUyoFCYBFw+F+eQsvNn8SjNLxnoPN48MvF4+tcoGMyRw7VLZ2+cpZb1owii5B9odCFwWayzValBCeUMsyTQvMMKmDCrhVtrmcJmdasP6UJKAAQLPZkarCqkt7dd71fnwm33utz//GwTJTLm7h5PU+30RiutDOeLfC9MVk8iHjAWBeXX3VXXMfEBJpcRbWt77bA0ECgndvp3O2ic/immWqX7TK2MYdSLQr9jTq9p0WCZHTgvHdIhb2MdGpmjVtVFl+8ejD3Qsbd8Ds0syY6typFllV5HXDpmu6lir/nEv8UkaeTN67We8R64TD/XIgEJfqeb8B187AMB3FNdoAAAAASUVORK5CYII=");
-}
-
-.list-man-think {
-  list-style: disc inside url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABmJLR0QA/wD/AP+gvaeTAAAB0UlEQVQokW2MQWjTYBiG3+9PmsUl3eaSVjedhzmEiaAeLCIIXsSTDkXBi1BPDvQsCApjDMSp9aKCrCB4Eg8qjMEQFAQniOLwpDJbdRm1W9OubZombfbn9zBbhvrAe3m/73lpLPlQ1fbsuM9NI0FEAnbp3RBsS1fZWVlmir+GbKFUGU1eS2YAgCZvv7obHEpchCwDAMA5Bj++xm5jDY4TQJIk+AFErRneOn7p1GW6MfX+hdA6j4rNPQAAKpVhejb2R3Lrfgj4AYMsqeKbVUkwVl79EA5sD0PTQGgaCAe2oYvXUfQiKLsEzgUkCWAyR4RFxmXXfXu1c05wYfQe1hU62Ks0O0ZO7wIxgl8PQIzg1QL8+GrPV+e+jBD+MP1gejzWp12Qolq8L74J8X4dAOA6DYAIv6yqu/h5eVZuCT3d8pG9B2JxSdVQyDloQ+ubg0NRzckX97FWn7Pcmz8zVQsAYv3R9r+mK9B0BYV8vbhsN6awkSep59f9YkY0V7P/ZCY98wgA2EYh/72U+vRmYYX79XbHgwYW5rO16op3DwAIfzGbfnZuy9aO9M7hboWIYTFTDpeWgslj509c+a8AAE/vPB7uMvUUI6iVmjdxcvTMy9btN+nAxtnGvsrKAAAAAElFTkSuQmCC");
+  .mc-6 {
+    column-count: 6;
+  }
 }
 
 .my-1 {
@@ -340,38 +338,22 @@ h5 {
   padding-bottom: 3rem;
 }
 
-.flex-col-grp {
-  display: flex;
-  align-items: start;
-  justify-content: space-between;
-}
-
-.flex-col-grp .flex-col:not(:last-child, :first-child) {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-}
-
-.flex-col-grp .flex-col:first-child {
-  margin-right: 1.5rem;
-}
-
-.flex-col-grp .flex-col:last-child {
-  margin-left: 1.5rem;
-}
-
-.flex-col-grp flex-col-max {
-  flex-grow: 1;
-}
-
 section {
   margin-bottom: 100px;
 }
 
 header {
-  padding: 10px 50px;
+  padding: 10px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
 
 header .branding {
@@ -395,7 +377,7 @@ header nav ul {
 
 header nav ul li a {
   display: inline-block;
-  padding: 5px;
+  padding: 2px;
   border: 2px dotted #efa12f;
   border-radius: 3px;
   color: #efa12f;
@@ -403,6 +385,14 @@ header nav ul li a {
   text-transform: uppercase;
   font-family: "IBM Plex Mono", monospace;
   font-weight: 800;
+  font-size: 9pt;
+}
+
+@media only screen and (min-width: 576px) {
+  header nav ul li a {
+    font-size: 12px;
+    padding: 5px;
+  }
 }
 
 header nav ul li a:hover {
@@ -412,31 +402,68 @@ header nav ul li a:hover {
 }
 
 header nav ul li a:first-child {
-  margin-right: 5px;
+  margin-right: 2px;
+}
+
+@media only screen and (min-width: 576px) {
+  header nav ul li a:first-child {
+    margin-right: 5px;
+  }
 }
 
 header nav ul li a:last-child {
-  margin-left: 5px;
+  margin-left: 2px;
+}
+
+@media only screen and (min-width: 576px) {
+  header nav ul li a:last-child {
+    margin-left: 5px;
+  }
 }
 
 header nav ul li a:not(:first-child, :last-child) {
-  margin: 0 5px;
+  margin: 0 2px;
+}
+
+@media only screen and (min-width: 576px) {
+  header nav ul li a:not(:first-child, :last-child) {
+    margin: 0 5px;
+  }
 }
 
 section#hero {
   display: flex;
   margin-bottom: 30px;
+  padding: 30px;
+  padding-top: 20px;
+  flex-direction: column-reverse;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-  padding: 30px 50px;
+}
+
+@media only screen and (min-width: 992px) {
+  section#hero {
+    flex-direction: row;
+  }
+}
+
+section#hero .hero-left {
+  text-align: center;
 }
 
 section#hero .hero-left .btn-group {
-  margin-top: 30px;
+  margin-top: 20px;
+}
+
+@media only screen and (min-width: 992px) {
+  section#hero .hero-left {
+    text-align: left;
+  }
 }
 
 section#hero figure.my-photo {
+  padding-bottom: 30px;
   position: relative;
   display: flex;
 }
@@ -499,6 +526,26 @@ nav.main-nav ul li a {
   text-transform: uppercase;
   font-family: "IBM Plex Mono", monospace;
   font-weight: 600;
+}
+
+nav.main-nav ul li a .symbol {
+  font-size: 18px;
+}
+
+@media only screen and (min-width: 768px) {
+  nav.main-nav ul li a .symbol {
+    margin-right: 3px;
+  }
+}
+
+nav.main-nav ul li a .text {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  nav.main-nav ul li a .text {
+    display: inline;
+  }
 }
 
 nav.main-nav ul li a:hover {
@@ -564,11 +611,94 @@ section#under-construction h1 i {
   color: #efa12f;
 }
 
-.portfolio-item .header {
+.portfolio-item .flex-col-grp-lg {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: column;
+}
+
+.portfolio-item .flex-col-grp-lg .flex-col:not(:last-child, :first-child) {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.portfolio-item .flex-col-grp-lg .flex-col:first-child {
+  margin-bottom: 1.5rem;
+}
+
+.portfolio-item .flex-col-grp-lg .flex-col:last-child {
+  margin-top: 1.5rem;
+}
+
+@media only screen and (min-width: 992px) {
+  .portfolio-item .flex-col-grp-lg {
+    flex-direction: row;
+    align-items: start;
+  }
+
+  .portfolio-item .flex-col-grp-lg .flex-col {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .portfolio-item .flex-col-grp-lg .flex-col:not(:last-child, :first-child) {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+  .portfolio-item .flex-col-grp-lg .flex-col:first-child {
+    margin-right: 1.5rem;
+  }
+
+  .portfolio-item .flex-col-grp-lg .flex-col:last-child {
+    margin-left: 1.5rem;
+  }
+}
+
+.portfolio-item .flex-col-grp-lg flex-col-max {
+  flex-grow: 1;
+}
+
+.portfolio-item p {
+  text-align: justify;
+}
+
+.portfolio-item .header {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 30px;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 768px) {
+  .portfolio-item .header {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.portfolio-item .header .btn-group {
+  padding-top: 20px;
+}
+
+.portfolio-item .header .btn-group .btn {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 5px;
+  padding: 3px 10px;
+}
+
+.portfolio-item .header .btn-group .btn:first-child {
+  margin-right: 5px;
+}
+
+.portfolio-item .header .btn-group .btn:last-child {
+  margin-left: 5px;
+}
+
+.portfolio-item .header .btn-group .btn:not(:first-child, :last-child) {
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .portfolio-item .header .left-txt {
@@ -598,9 +728,10 @@ section#under-construction h1 i {
 .portfolio-gallery figure {
   position: relative;
   display: block;
-  height: 150px;
-  width: 150px;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
+  max-width: 300px;
 }
 
 .portfolio-gallery figure img {
@@ -683,4 +814,20 @@ section#under-construction h1 i {
 
 section > h2 {
   padding-bottom: 50px;
+}
+
+.list-tick {
+  list-style: disc inside url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABmJLR0QA/wD/AP+gvaeTAAABPElEQVQokZWRvUuCcRDHPz/NePRRKtOgIqKiaO5l03ANlKK1f6ChglqCKGgoCAeHKGippa01peZ0KqNdoQx6A5GWREx7rsGHJ4VnqNvuuO/nvncH/wzVnITzqTmENZAps3QrShKZ0djFcq8siaAswUwuuS+wYUf1bY1cD6fHQyiOnRYZDm0txIM8nJUH9X7X3VDBu+AAaNiAet4J9abmgyDPJ3X8Ax6K5/flHZTRECCT8qkoLuqUVnXkCxynAV6OvvH3efBcvoLbmABos2heoSteobSiU4p2Unsy6AhouJNvSLs0fADmBLIAWqRGd7xCtQAuzYF+9Q66YRIla00QJQklKgKgzVbpeXTjnP8An/G7kKhEyx/C+eQewqbdpQTZzYzFtlsEAKFcKorIulJMmzZuEJVIj0VTdqA/xQ+JumrecYHWPwAAAABJRU5ErkJggg==");
+}
+
+.list-goal {
+  list-style: disc inside url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABmJLR0QA/wD/AP+gvaeTAAAB90lEQVQokW2SXUhTcQDFz/9/P5tzwdpWU2IL1rJMUhaVUDkKNKTemvTxkOAIg4166AOiB596Cx+M6AMyip4Kkh5ioRH5oghz2TBwLEHZZnTXipy7d/d/d28Plfmw39vhnJfDOUAdAoG41NoaEf9KAgxR/BfrkDOHB+Mtsj2yVZCaKAiX17X8yqZSmaOYuv/68RAAcP/C0aOx0UGP72qbbbNfaeAMwS7zXaJjl+H50fi1UvOGgu3e5MLHSR4Azh+5FBvw+M4VbLSkde+p9fZ0eilHMXzn+UoqJUuntqNprlA7BAA8AAQle0QilNNPtLH9oRb3sxsPskVi0mW71NDRsbvamalsUyoFCYBFw+F+eQsvNn8SjNLxnoPN48MvF4+tcoGMyRw7VLZ2+cpZb1owii5B9odCFwWayzValBCeUMsyTQvMMKmDCrhVtrmcJmdasP6UJKAAQLPZkarCqkt7dd71fnwm33utz//GwTJTLm7h5PU+30RiutDOeLfC9MVk8iHjAWBeXX3VXXMfEBJpcRbWt77bA0ECgndvp3O2ic/immWqX7TK2MYdSLQr9jTq9p0WCZHTgvHdIhb2MdGpmjVtVFl+8ejD3Qsbd8Ds0syY6typFllV5HXDpmu6lir/nEv8UkaeTN67We8R64TD/XIgEJfqeb8B187AMB3FNdoAAAAASUVORK5CYII=");
+}
+
+ul.icon-list {
+  list-style-type: none;
+}
+
+ul.icon-list li i {
+  margin-right: 5px;
 }

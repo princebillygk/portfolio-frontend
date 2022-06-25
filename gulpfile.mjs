@@ -73,7 +73,7 @@ export const js = (cb) => {
     src(jsPath)
         .pipe(concat('index.js'))
         .pipe(dest(destination('./js/')))
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(rename({ suffix: '.min' }))
         .pipe(dest(destination('./js/')))
         .pipe(connect.reload())

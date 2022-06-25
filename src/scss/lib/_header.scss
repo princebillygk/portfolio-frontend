@@ -1,18 +1,25 @@
 header {
-    padding: 10px 50px;
+    padding: 10px 10px;
     display: flex;
     align-items: center;
-    justify-content:space-between;
+    justify-content: space-between;
 
-    .branding{
+    @include mq-medium {
+        @include spaceX(padding, 30px)
+    }
+
+    .branding {
         display: flex;
         align-items: center;
-        img{
+
+        img {
             height: 32px;
             margin-right: 10px;
         }
+
         color: $color-black;
         text-transform: uppercase;
+
         font: {
             family: $font-family-title;
             weight: 800;
@@ -22,18 +29,27 @@ header {
     nav ul {
         display: flex;
         align-items: stretch;
+
         li a {
             display: inline-block;
-            padding: 5px;
+            padding: 2px;
             border: 2px dotted $color-orange;
             border-radius: 3px;
             color: $color-orange;
             transition: all 400ms ease-in-out;
             text-transform: uppercase;
+
             font: {
                 family: $font-family-title;
                 weight: 800;
+                size: 9pt;
             }
+
+            @include mq-small {
+                font-size: 12px;
+                padding: 5px;
+            }
+
             &:hover {
                 background-color: $color-orange;
                 color: white;
@@ -41,15 +57,27 @@ header {
             }
 
             &:first-child {
-                margin-right: 5px;
+                margin-right: 2px;
+
+                @include mq-small {
+                    margin-right: 5px;
+                }
             }
 
             &:last-child {
-                margin-left: 5px;
+                margin-left: 2px;
+
+                @include mq-small {
+                    margin-left: 5px;
+                }
             }
 
             &:not(:first-child, :last-child) {
-                margin: 0 5px;
+                margin: 0 2px;
+
+                @include mq-small {
+                    margin: 0 5px;
+                }
             }
         }
 

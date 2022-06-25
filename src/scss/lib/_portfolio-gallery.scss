@@ -6,9 +6,10 @@
     figure {
         position: relative;
         display: block;
-        height: 150px;
-        width: 150px;
+        height: 100%;
+        width: 100%;
         overflow: hidden;
+        max-width: 300px;
 
         img {
             height: 100%;
