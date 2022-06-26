@@ -61,6 +61,7 @@ h5 {
 }
 
 .btn {
+    display: inline-block;
     border: none;
     background-color: white;
     padding: 10px;
@@ -151,15 +152,33 @@ h5 {
     }
 }
 
-
-// Mulitcolumn
-@include mq-large {
+@include mq-small{
     @for $n from 2 through 6 {
-        .mc-#{$n} {
+        .mc-#{$n}-sm {
             column-count: $n;
         }
     }
 }
+
+@include mq-medium{
+    @for $n from 2 through 6 {
+        .mc-#{$n}-md {
+            column-count: $n;
+        }
+    }
+}
+
+
+// Mulitcolumn
+@include mq-large {
+    @for $n from 2 through 6 {
+        .mc-#{$n}-lg {
+            column-count: $n;
+        }
+    }
+}
+
+
 
 
 // spacing
@@ -227,4 +246,28 @@ h5 {
 
 section {
     margin-bottom: 100px;
+}
+
+.time-badge {
+    background-color: $color-faded-green;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 20rem;
+    display: flex;
+
+    .time {
+        border-left: 1px solid black;
+        margin-left: 5px;
+        padding-left: 3px;
+        color: $color-choclate;
+        font-weight: bold;
+    }
+}
+
+.badge {
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: #eee;
+    border-radius: 20rem;
+    margin: 5px;
 }

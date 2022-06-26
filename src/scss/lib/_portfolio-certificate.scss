@@ -6,11 +6,22 @@
         padding-bottom: 30px; 
         display: inline-block;
         margin: auto;
+        .container {
+            position: relative;
+            width: 300px;
+            height: 250px;
+            background-color: #eee;
+
+        }
         img {
-            max-width: 300px;
-            max-height: 250px;
-            min-width: 300px;
-            min-height: 250px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: contain;
+            max-width: 100%;
+            max-height: 100%;
+            margin: auto;
         }
 
         figcaption {

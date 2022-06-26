@@ -3,7 +3,7 @@
    License: none (public domain)
 */
 
-html,body,div,span,h1,h2,h3,h4,h5,h6,p,a,address,code,img,q,i,ul,li,table,tr,th,td,figure,figcaption,header,main,nav,section {
+html,body,div,span,h1,h2,h3,h4,h5,h6,p,a,address,code,img,q,i,ul,li,table,tr,th,td,figure,figcaption,header,main,nav,section,time {
   margin: 0;
   padding: 0;
   border: 0;
@@ -136,6 +136,7 @@ h5 {
 }
 
 .btn {
+  display: inline-block;
   border: none;
   background-color: white;
   padding: 10px;
@@ -214,24 +215,46 @@ h5 {
   color: #137ca7;
 }
 
-@media only screen and (min-width: 992px) {
-  .mc-2 {
+@media only screen and (min-width: 768px) {
+  .mc-2-md {
     column-count: 2;
   }
 
-  .mc-3 {
+  .mc-3-md {
     column-count: 3;
   }
 
-  .mc-4 {
+  .mc-4-md {
     column-count: 4;
   }
 
-  .mc-5 {
+  .mc-5-md {
     column-count: 5;
   }
 
-  .mc-6 {
+  .mc-6-md {
+    column-count: 6;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .mc-2-lg {
+    column-count: 2;
+  }
+
+  .mc-3-lg {
+    column-count: 3;
+  }
+
+  .mc-4-lg {
+    column-count: 4;
+  }
+
+  .mc-5-lg {
+    column-count: 5;
+  }
+
+  .mc-6-lg {
     column-count: 6;
   }
 }
@@ -340,6 +363,30 @@ h5 {
 
 section {
   margin-bottom: 100px;
+}
+
+.time-badge {
+  background-color: #ecf7ee;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border-radius: 20rem;
+  display: flex;
+}
+
+.time-badge .time {
+  border-left: 1px solid black;
+  margin-left: 5px;
+  padding-left: 3px;
+  color: #4c2012;
+  font-weight: bold;
+}
+
+.badge {
+  display: inline-block;
+  padding: 5px 15px;
+  background-color: #eee;
+  border-radius: 20rem;
+  margin: 5px;
 }
 
 header {
@@ -611,6 +658,16 @@ section#under-construction h1 i {
   color: #efa12f;
 }
 
+section#under-construction .prototype {
+  width: 100%;
+  height: 100%;
+}
+
+section#under-construction .prototype img {
+  width: 100%;
+  height: 100%;
+}
+
 .portfolio-item .flex-col-grp-lg {
   display: flex;
   align-items: center;
@@ -701,10 +758,6 @@ section#under-construction h1 i {
   margin-right: 5px;
 }
 
-.portfolio-item .header .left-txt {
-  text-align: right;
-}
-
 .portfolio-item .header .content {
   display: flex;
 }
@@ -778,11 +831,22 @@ section#under-construction h1 i {
   margin: auto;
 }
 
+.portfolio-certificates figure.certificate .container {
+  position: relative;
+  width: 300px;
+  height: 250px;
+  background-color: #eee;
+}
+
 .portfolio-certificates figure.certificate img {
-  max-width: 300px;
-  max-height: 250px;
-  min-width: 300px;
-  min-height: 250px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
 }
 
 .portfolio-certificates figure.certificate figcaption {
