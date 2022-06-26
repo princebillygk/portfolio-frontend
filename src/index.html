@@ -25,6 +25,7 @@
         rel="stylesheet">
 
     <!-- Styles -->
+    <link rel="stylesheet" href="./vendor/photoswipe/style.css">
     <link rel="stylesheet" href="./css/style.min.css">
 
 </head>
@@ -275,55 +276,71 @@
                         voluptatum vitae nemo temporibus, non sit excepturi consequuntur vel veritatis eaque.</p>
                     <div class="content">
                         <div class="mt-5 flex-col-grp-lg">
-                            <div class="portfolio-gallery flex-col">
-                                <figure>
-                                    <img src=https://dummyimage.com/250x500/000/aaa>
-                                    <div class="overlay">
-                                        <figcaption>Lorem ipsum dolor sit amet.</figcaption>
-                                    </div>
-                                </figure>
-                                <figure>
-                                    <img src=https://dummyimage.com/800/000/aaa>
-                                    <div class="overlay">
-                                        <figcaption>Lorem ipsum dolor sit amet.</figcaption>
-                                    </div>
-                                </figure>
-                                <figure>
-                                    <img src=https://dummyimage.com/800x300/000/aaa>
-                                    <div class="overlay">
-                                        <figcaption>Lorem ipsum dolor sit amet.</figcaption>
-                                    </div>
-                                </figure>
-                                <figure>
-                                    <img src=https://dummyimage.com/100/000/aaa>
-                                    <div class="overlay">
-                                        <figcaption>Lorem ipsum dolor sit amet.</figcaption>
-                                    </div>
-                                </figure>
-                                <figure>
-                                    <img src=https://dummyimage.com/300x200/000/aaa>
-                                    <div class="overlay">
-                                        <figcaption>Lorem ipsum dolor sit amet.</figcaption>
-                                    </div>
-                                </figure>
-                                <figure>
-                                    <img src=https://dummyimage.com/100x40/000/aaa>
-                                    <div class="overlay">
-                                        <figcaption>Lorem ipsum dolor sit amet.</figcaption>
-                                    </div>
-                                </figure>
-                                <figure>
-                                    <img src=https://dummyimage.com/700x400/000/aaa>
-                                    <div class="overlay">
-                                        <figcaption>Lorem ipsum dolor sit amet.</figcaption>
-                                    </div>
-                                </figure>
-                                <figure>
-                                    <img src=https://dummyimage.com/300x1000/000/aaa>
-                                    <div class="overlay">
-                                        <figcaption>Lorem ipsum dolor sit amet.</figcaption>
-                                    </div>
-                                </figure>
+                            <div id="project-lightbox" class="portfolio-gallery flex-col">
+                                <a href="https://dummyimage.com/250x500/000/aaa" data-pswp-width="10000"
+                                    data-pswp-height="10000">
+                                    <figure>
+                                        <img src="https://dummyimage.com/250x500/000/aaa">
+                                        <div class="overlay">
+                                            <figcaption>Lorem ipsum dolor sit amet.</figcaption>
+                                        </div>
+                                    </figure>
+                                </a>
+
+                                <a href="https://dummyimage.com/700x500/000/aaa" data-pswp-width="10000"
+                                    data-pswp-height="10000">
+                                    <figure>
+                                        <img src="https://dummyimage.com/700x500/000/aaa">
+                                        <div class="overlay">
+                                            <figcaption>Lorem ipsum dolor sit amet.</figcaption>
+                                        </div>
+                                    </figure>
+                                </a>
+                                <a href="https://dummyimage.com/250x800/000/aaa" data-pswp-width="10000"
+                                    data-pswp-height="10000">
+                                    <figure>
+                                        <img src="https://dummyimage.com/250x800/000/aaa">
+                                        <div class="overlay">
+                                            <figcaption>Lorem ipsum dolor sit amet.</figcaption>
+                                        </div>
+                                    </figure>
+                                </a>
+                                <a href="https://dummyimage.com/700x400/000/aaa" data-pswp-width="10000"
+                                    data-pswp-height="10000">
+                                    <figure>
+                                        <img src="https://dummyimage.com/750x400/000/aaa">
+                                        <div class="overlay">
+                                            <figcaption>Lorem ipsum dolor sit amet.</figcaption>
+                                        </div>
+                                    </figure>
+                                </a>
+                                <a href="https://dummyimage.com/750x500/000/aaa" data-pswp-width="10000"
+                                    data-pswp-height="10000">
+                                    <figure>
+                                        <img src="https://dummyimage.com/750/000/aaa">
+                                        <div class="overlay">
+                                            <figcaption>Lorem ipsum dolor sit amet.</figcaption>
+                                        </div>
+                                    </figure>
+                                </a>
+                                <a href="https://dummyimage.com/250x500/000/aaa" data-pswp-width="10000"
+                                    data-pswp-height="10000">
+                                    <figure>
+                                        <img src="https://dummyimage.com/250x500/000/aaa">
+                                        <div class="overlay">
+                                            <figcaption>Lorem ipsum dolor sit amet.</figcaption>
+                                        </div>
+                                    </figure>
+                                </a>
+                                <a href="https://dummyimage.com/250x500/000/aaa" data-pswp-width="10000"
+                                    data-pswp-height="10000">
+                                    <figure>
+                                        <img src="https://dummyimage.com/250x500/000/aaa">
+                                        <div class="overlay">
+                                            <figcaption>Lorem ipsum dolor sit amet.</figcaption>
+                                        </div>
+                                    </figure>
+                                </a>
                             </div>
                             <div class="flex-col-max">
                                 <h3>Applied Skills</h3>
@@ -603,107 +620,19 @@
                 <h3 class="mb-5">
                     Certificate Type
                 </h3>
-                <div class="portfolio-certificates">
-                    <figure class="certificate">
-                        <div class="container">
-                            <img src="https://dummyimage.com/1200x1250/FBFAB9/000?text=Certificate" alt="">
-                        </div>
-                        <figcaption>
-                            <h5>Certificate Subject</h5>
-                            <p class="h6">Provider</p>
-                            Year
-                        </figcaption>
-                    </figure>
-                    <figure class="certificate">
-                        <div class="container">
-                            <img src="https://dummyimage.com/1200x800/FBFAB9/000?text=Certificate" alt="">
-                        </div>
-                        <figcaption>
-                            <h5>Certificate Subject</h5>
-                            <p class="h6">Provider</p>
-                            Year
-                        </figcaption>
-                    </figure>
-                    <figure class="certificate">
-                        <div class="container">
-                            <img src="https://dummyimage.com/700x200/FBFAB9/000?text=Certificate" alt="">
-                        </div>
-                        <figcaption>
-                            <h5>Certificate Subject</h5>
-                            <p class="h6">Provider</p>
-                            Year
-                        </figcaption>
-                    </figure>
-                    <figure class="certificate">
-                        <div class="container">
-                            <img src="https://dummyimage.com/300x100/FBFAB9/000?text=Certificate" alt="">
-                        </div>
-                        <figcaption>
-                            <h5>Certificate Subject</h5>
-                            <p class="h6">Provider</p>
-                            Year
-                        </figcaption>
-                    </figure>
-                    <figure class="certificate">
-                        <div class="container">
-                            <img src="https://dummyimage.com/500x500/FBFAB9/000?text=Certificate" alt="">
-                        </div>
-                        <figcaption>
-                            <h5>Certificate Subject</h5>
-                            <p class="h6">Provider</p>
-                            Year
-                        </figcaption>
-                    </figure>
-                    <figure class="certificate">
-                        <div class="container">
-                            <img src="https://dummyimage.com/1000x400/FBFAB9/000?text=Certificate" alt="">
-                        </div>
-                        <figcaption>
-                            <h5>Certificate Subject</h5>
-                            <p class="h6">Provider</p>
-                            Year
-                        </figcaption>
-                    </figure>
-                    <figure class="certificate">
-                        <div class="container">
-                            <img src="https://dummyimage.com/1500x1000/FBFAB9/000?text=Certificate" alt="">
-                        </div>
-                        <figcaption>
-                            <h5>Certificate Subject</h5>
-                            <p class="h6">Provider</p>
-                            Year
-                        </figcaption>
-                    </figure>
-                    <figure class="certificate">
-                        <div class="container">
-                            <img src="https://dummyimage.com/1400x1250/FBFAB9/000?text=Certificate" alt="">
-                        </div>
-                        <figcaption>
-                            <h5>Certificate Subject</h5>
-                            <p class="h6">Provider</p>
-                            Year
-                        </figcaption>
-                    </figure>
-                    <figure class="certificate">
-                        <div class="container">
-                            <img src="https://dummyimage.com/1200x1250/FBFAB9/000?text=Certificate" alt="">
-                        </div>
-                        <figcaption>
-                            <h5>Certificate Subject</h5>
-                            <p class="h6">Provider</p>
-                            Year
-                        </figcaption>
-                    </figure>
-                    <figure class="certificate">
-                        <div class="container">
-                            <img src="https://dummyimage.com/150x123/FBFAB9/000?text=Certificate" alt="">
-                        </div>
-                        <figcaption>
-                            <h5>Certificate Subject</h5>
-                            <p class="h6">Provider</p>
-                            Year
-                        </figcaption>
-                    </figure>
+                <div id="certificate-lightbox" class="portfolio-certificates">
+                    <a class="certificate" href="https://dummyimage.com/500/FBFAB9/000?text=Certificate" data-pswp-width="10000" data-pswp-height="10000">
+                        <figure class="certificate">
+                            <div  class="container">
+                                <img src="https://dummyimage.com/500/FBFAB9/000?text=Certificate" alt="">
+                            </div>
+                            <figcaption>
+                                <h5>Certificate Subject</h5>
+                                <p class="h6">Provider</p>
+                                Year
+                            </figcaption>
+                        </figure>
+                    </a>
                 </div>
             </div>
 
@@ -756,6 +685,25 @@
             <i class="las la-arrow-circle-up"></i>
         </span>
     </button>
+    <script type="module">
+        import PhotoSwipeLightbox from './vendor/photoswipe/lightbox.js';
+        const projLightBox = new PhotoSwipeLightbox({
+            gallery: '#project-lightbox',
+            children: 'a',
+            errorMsg: 'The photo cannot be loaded',
+            pswpModule: () => import('./vendor/photoswipe/core.js')
+        });
+        projLightBox.init();
+
+        const certLightBox = new PhotoSwipeLightbox({
+            gallery: '#certificate-lightbox',
+            children: 'a',
+            errorMsg: 'The photo cannot be loaded',
+            pswpModule: () => import('./vendor/photoswipe/core.js')
+        });
+        certLightBox.init();
+
+    </script>
     <script type="text/javascript" src="./js/index.min.js"></script>
 </body>
 

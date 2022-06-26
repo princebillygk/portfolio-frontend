@@ -2,31 +2,41 @@
     display: flex;
     flex-wrap: wrap;
 
-    figure.certificate {
-        padding-bottom: 30px; 
+    a.certificate {
         display: inline-block;
+        padding-bottom: 30px;
+        text-decoration: none;
+        color: #000;
+
+        figure {
+            .container {
+                position: relative;
+                width: 300px;
+                height: 250px;
+                background-color: #eee;
+
+                img {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    object-fit: contain;
+                    max-width: 100%;
+                    max-height: 100%;
+                    margin: auto;
+                }
+
+            }
+
+
+            figcaption {
+                text-align: center;
+            }
+        }
+
         margin: auto;
-        .container {
-            position: relative;
-            width: 300px;
-            height: 250px;
-            background-color: #eee;
-
-        }
-        img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            object-fit: contain;
-            max-width: 100%;
-            max-height: 100%;
-            margin: auto;
-        }
-
-        figcaption {
-            text-align: center;
-        }
     }
+
+
 
 }

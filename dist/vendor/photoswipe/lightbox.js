@@ -1,4 +1,3 @@
-// The only code where I have used a js library
 /*!
   * PhotoSwipe Lightbox 5.2.8 - https://photoswipe.com
   * (c) 2022 Dmytro Semenov

@@ -894,20 +894,22 @@ section#under-construction .prototype img {
   flex-wrap: wrap;
 }
 
-.portfolio-certificates figure.certificate {
-  padding-bottom: 30px;
+.portfolio-certificates a.certificate {
   display: inline-block;
+  padding-bottom: 30px;
+  text-decoration: none;
+  color: #000;
   margin: auto;
 }
 
-.portfolio-certificates figure.certificate .container {
+.portfolio-certificates a.certificate figure .container {
   position: relative;
   width: 300px;
   height: 250px;
   background-color: #eee;
 }
 
-.portfolio-certificates figure.certificate img {
+.portfolio-certificates a.certificate figure .container img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -918,7 +920,7 @@ section#under-construction .prototype img {
   margin: auto;
 }
 
-.portfolio-certificates figure.certificate figcaption {
+.portfolio-certificates a.certificate figure figcaption {
   text-align: center;
 }
 
@@ -963,4 +965,10 @@ ul.icon-list {
 
 ul.icon-list li i {
   margin-right: 5px;
+}
+
+.pswp__img {
+  width: 100%;
+  height: 200%;
+  object-fit: contain;
 }
