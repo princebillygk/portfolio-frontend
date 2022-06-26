@@ -125,7 +125,9 @@ export const dev  = series(build, parallel (serve ,() => {
 
 export const ghpages = (cb) =>{
     src(destination("./**/*"))
+        .pipe(debug())
         .pipe(gh())
+        .pipe(debug())
     cb()
 }
 
@@ -144,6 +146,7 @@ export const host = (cb) => {
     src(".publish/**/*",  {buffer: false })
     .pipe(debug())
     .pipe(conn.dest("./cv/"))
+    .pipe(debug())
     cb()
 }
 
