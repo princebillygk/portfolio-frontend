@@ -39,6 +39,7 @@ const destination = (loc) => {
 }
 
 const scssPath = source('./scss/**/*.{scss,css}')
+const vendorPath = source('./vendor/**/*')
 const jsPath = source('./js/**/*.js')
 const htmlPath = source('./**/*.html')
 const imgPath = source('./assets/img/**/*.{png,gif,jpg,webp,ico}')
@@ -51,6 +52,13 @@ const destHtmlFiles = destination('index.html')
 export const clean = (cb) => {
     del('dist')
     return cb();
+}
+
+export const vendor = (cb) => {
+    src(vendorPath)
+        .pipe(dest(destination('./vendor/')))
+        .pipe(connect.reload())
+    return cb()
 }
 
 export const css = (cb) => {
@@ -97,7 +105,7 @@ export const image = (cb) => {
     return cb()
 }
 
-export const build = series(js, image, html,  css)
+export const build = series(js, image, html, vendor,  css)
 export default build
 export const serve = () => {
     connect.server({
@@ -107,8 +115,9 @@ export const serve = () => {
 }
 
 export const dev  = series(build, parallel (serve ,() => {
-        console.log("Watching: " , htmlFiles, imgPath, jsPath, scssPath)
+        console.log("Watching: " , htmlFiles, vendorPath, imgPath, jsPath, scssPath)
         watch(htmlPath, series(html, css))
+        watch(vendorPath, series(html, vendor))
         watch(imgPath, image)
         watch(jsPath, js)
         watch(scssPath, css)

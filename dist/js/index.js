@@ -1,3 +1,5 @@
+import Lightbox from './photoswipe-lightbox.esm.js';
+
 //constants
 const mainNav = document.getElementById("mainNav")
 const moveToTopBtn = document.getElementById("moveToTopBtn")
@@ -32,3 +34,12 @@ const fixFloatingButton= (sy) => {
         moveToTopBtn.classList.remove("active-floating-btn")
     }
 }
+
+
+// photoswitpe-portfolios
+const lightbox = new Lightbox({
+  gallery: '#portfolio-img',
+  children: 'a',
+  pswpModule: () => import('./photoswipe.esm.js')
+});
+lightbox.init();

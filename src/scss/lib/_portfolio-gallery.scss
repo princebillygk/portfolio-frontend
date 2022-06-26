@@ -1,25 +1,61 @@
 .portfolio-gallery {
     display: inline-grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto;
+
+    @include mq-small {
+        grid-template-columns: auto auto auto;
+    }
+
+    @include mq-medium {
+        grid-template-columns: auto auto auto auto;
+    }
+
+    @include mq-large{
+        grid-template-columns: auto auto auto;
+    }
+
     gap: 10px;
 
     figure {
         position: relative;
         display: block;
-        height: 100%;
-        width: 100%;
         overflow: hidden;
-        max-width: 300px;
+        width: 40vw;
+        height: 40vw;
+        background-color: #eee;
+
+        @include mq-small {
+            width: 25vw;
+            height: 25vw;
+        }
+
+        @include mq-medium {
+            width: 20vw;
+            height: 20vw;
+        }
+
+        @include mq-large {
+            width: 180px;
+            height: 180px;
+        }
 
         img {
-            height: 100%;
-            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: contain;
+            max-width: 100%;
+            max-height: 100%;
+            margin: auto;
+
         }
 
         &:hover {
             .overlay {
                 top: 0%;
             }
+
             img {
                 filter: blur(4px);
             }
