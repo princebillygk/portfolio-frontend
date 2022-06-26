@@ -123,8 +123,8 @@ export const dev  = series(build, parallel (serve ,() => {
         watch(scssPath, css)
 }))
 
-export const ghpages =  (cb) =>{
-    src(path.join(distPath, './**/*'))
+export const ghpages = (cb) =>{
+    src(destination("./**/*"))
         .pipe(gh())
     cb()
 }
