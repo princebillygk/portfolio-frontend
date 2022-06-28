@@ -4,8 +4,10 @@ This is the frontend portion of my portfolio, which I developed. The�
 
 You can visit the final product in theses urls:
 
-- [princebillygk@github.io](mailto:princebillygk@github.io)
+- <a href="https://princebillygk.github.io/" target="*blank"*>princebillygk.github.io</a>
 
-- [princebillygk.azurewebsites.net](https://princebillygk.azurewebsites.net/)
+- <a href="https://princebillygk.azurewebsites.net/" target="_blank"_>https://princebillygk.azurewebsites.net</a>
+
+
 
 
