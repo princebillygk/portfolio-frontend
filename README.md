@@ -4,9 +4,9 @@ This is the frontend portion of my portfolio, which I developed. The�
 
 You can visit the final product in theses urls:
 
-- <a href="https://princebillygk.github.io/" target="*blank"*>princebillygk.github.io</a>
+- <a href="https://princebillygk.github.io/" target="_blank">princebillygk.github.io</a>
 
-- <a href="https://princebillygk.azurewebsites.net/" target="_blank"_>https://princebillygk.azurewebsites.net</a>
+- <a href="https://princebillygk.azurewebsites.net/" target="_blank">https://princebillygk.azurewebsites.net</a>
 
 
 
