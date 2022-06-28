@@ -8,9 +8,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gulp clean && gulp build",
-    "start": "gulp dev",
-    "clean": "gulp clean",
-    "deploy": "gulp clean && gulp build && gulp ghpages && gulp host"
+    "clean": "gulp clean"
   },
   "dependencies": {
     "normalize.css": "^8.0.1"
