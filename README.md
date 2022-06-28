@@ -6,7 +6,7 @@ You can visit the final product in theses urls:
 
 - <a href="https://princebillygk.github.io/" target="_blank">princebillygk.github.io</a>
 
-- <a href="https://princebillygk.azurewebsites.net/" target="_blank">https://princebillygk.azurewebsites.net</a>
+- <a href="https://princebillygk.azurewebsites.net/" target="_blank">princebillygk.azurewebsites.net</a>
 
 
 
