@@ -1,3 +1,4 @@
+@use "sass:math";
 @import "../../node_modules/reset-css/reset";
 // @import "../../node_modules/normalize.css/normalize";
 @import "vars";
@@ -18,6 +19,8 @@
 section > h2 {
     padding-bottom: 50px;
 }
+
+
 
 // Different types of lists
 .list-tick {

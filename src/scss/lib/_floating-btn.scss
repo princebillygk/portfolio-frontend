@@ -1,6 +1,12 @@
 .floating-btn {
+    transition: all 500ms ease-in-out 20ms;
+    &:hover {
+        transform: translate(0, -10px);
+    }
     @include mat-shadow(5);
-    border-radius: 30%;
+    line-height: 1em;
+    padding: 0;
+    border-radius: 50%;
     background-color: $color-orange;
     position: fixed;
     bottom: -100px;

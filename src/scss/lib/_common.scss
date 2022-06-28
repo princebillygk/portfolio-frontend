@@ -6,6 +6,28 @@ body {
     font-family: $font-family-regular;
 }
 
+td,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.list {
+    line-height: $golden-ratio * 1em;
+}
+
+.list {
+    list-style-position: inside;
+    text-indent: -1em;
+    padding-left: 1em;
+
+    li {
+        @include spaceY(padding, $golden-spacing);
+    }
+}
+
 
 main {
     padding: 50px 15px;
@@ -23,13 +45,12 @@ a {
 
     h#{$index},
     .h#{$index} {
+        @include spaceY(margin, $golden-spacing);
         font: {
             size: 1em + .17em *(7-$index);
             weight: 800;
             family: $font-family-title;
         }
-
-        margin: 10px 0;
     }
 }
 
@@ -64,10 +85,10 @@ h5 {
     display: inline-block;
     border: none;
     background-color: white;
-    padding: 10px;
+    padding: $golden-spacing $golden-ratio * 1rem;
     transition: box-shadow 500ms;
     text-align: center;
-    @include mat-shadow(2);
+    @include mat-shadow(1);
 
     &:active {
         span {
@@ -84,7 +105,7 @@ h5 {
         font-size: 16pt;
 
         &+.btn-text {
-            margin-left: 3px;
+            margin-left: $golden-ratio * 1rem, 2;
         }
     }
 
@@ -117,6 +138,7 @@ h5 {
     &:hover {
         .btn {
             background-color: rgb(245, 245, 245);
+            @include mat-shadow(3);  
 
             span {
                 color: gray;
@@ -124,21 +146,25 @@ h5 {
         }
     }
 
+
     .btn {
         &:first-child {
-            margin-right: 3px;
-        }
-
-        &:not(:first-child, :last-child) {
-            margin: 0 3px;
+            margin-right: $golden-spacing;
+            border-radius: $golden-ratio*1rem 0 0 $golden-ratio*1rem;
         }
 
         &:last-child {
-            margin-left: 3px;
+            margin-left: $golden-spacing;
+            border-radius: 0 $golden-ratio*1rem $golden-ratio*1rem 0;
+        }
+
+        &:not(:first-child, :last-child) {
+            @include spaceX(margin, $golden-spacing);
         }
 
         &:hover {
             background-color: white;
+            @include mat-shadow(2);
 
             .btn-icon {
                 color: $color-orange;
@@ -152,7 +178,7 @@ h5 {
     }
 }
 
-@include mq-small{
+@include mq-small {
     @for $n from 2 through 6 {
         .mc-#{$n}-sm {
             column-count: $n;
@@ -160,7 +186,7 @@ h5 {
     }
 }
 
-@include mq-medium{
+@include mq-medium {
     @for $n from 2 through 6 {
         .mc-#{$n}-md {
             column-count: $n;

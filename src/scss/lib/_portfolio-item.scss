@@ -52,49 +52,56 @@
     .header {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 30px;
+        align-items: stretch;
+        margin-bottom: $golden-ratio * 1rem;
 
         flex-direction: column;
 
-        @include mq-medium {
+        @include mq-large{
             flex-direction: row;
             align-items: center;
         }
 
         .btn-group {
-            padding-top: 20px;
-
+            padding-top: $golden-spacing;
+            @include mq-medium{
+                align-self: center;
+            }
             .btn {
-                @include mat-shadow(1);
-                border-radius: 5px;
-                padding: 3px 10px;
-
-                &:first-child {
-                    margin-right: 5px;
-                }
-
-                &:last-child {
-                    margin-left: 5px;
-                }
-
-                &:not(:first-child, :last-child) {
-                    @include spaceX(margin, 5px);
+                flex: 1;
+                @include mq-medium{
+                    flex: none;
                 }
             }
         }
 
 
-        .left-txt {
-            text-align: right;
-        }
-
         .content {
             display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+
+
+            @include mq-large{
+                flex-direction: row;
+                text-align: left;
+                align-items: stretch;
+            }
 
             .content-logo {
-                width: 64px;
-                height: 64px;
-                padding-right: 20px;
+                max-width: 92px;
+                max-height: 92px;
+                align-self: center;
+
+                @include mq-small {
+                    max-width: 128px;
+                    max-height: 128px;
+                }
+
+                @include mq-large{
+                    padding-right: $golden-ratio * 1rem;
+                    align-self: flex-start;
+                }
 
                 img {
                     width: 100%;

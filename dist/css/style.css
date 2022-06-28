@@ -54,6 +54,21 @@ body {
   font-family: "Lato", sans-serif;
 }
 
+td,p,h1,h2,h3,h4,h5,h6,.list {
+  line-height: 1.6180339888em;
+}
+
+.list {
+  list-style-position: inside;
+  text-indent: -1em;
+  padding-left: 1em;
+}
+
+.list li {
+  padding-top: 0.3090169944rem;
+  padding-bottom: 0.3090169944rem;
+}
+
 main {
   padding: 50px 15px;
 }
@@ -70,45 +85,51 @@ a {
 }
 
 h1,.h1 {
+  margin-top: 0.3090169944rem;
+  margin-bottom: 0.3090169944rem;
   font-size: 2.02em;
   font-weight: 800;
   font-family: "IBM Plex Mono", monospace;
-  margin: 10px 0;
 }
 
 h2,.h2 {
+  margin-top: 0.3090169944rem;
+  margin-bottom: 0.3090169944rem;
   font-size: 1.85em;
   font-weight: 800;
   font-family: "IBM Plex Mono", monospace;
-  margin: 10px 0;
 }
 
 h3,.h3 {
+  margin-top: 0.3090169944rem;
+  margin-bottom: 0.3090169944rem;
   font-size: 1.68em;
   font-weight: 800;
   font-family: "IBM Plex Mono", monospace;
-  margin: 10px 0;
 }
 
 h4,.h4 {
+  margin-top: 0.3090169944rem;
+  margin-bottom: 0.3090169944rem;
   font-size: 1.51em;
   font-weight: 800;
   font-family: "IBM Plex Mono", monospace;
-  margin: 10px 0;
 }
 
 h5,.h5 {
+  margin-top: 0.3090169944rem;
+  margin-bottom: 0.3090169944rem;
   font-size: 1.34em;
   font-weight: 800;
   font-family: "IBM Plex Mono", monospace;
-  margin: 10px 0;
 }
 
 h6,.h6 {
+  margin-top: 0.3090169944rem;
+  margin-bottom: 0.3090169944rem;
   font-size: 1.17em;
   font-weight: 800;
   font-family: "IBM Plex Mono", monospace;
-  margin: 10px 0;
 }
 
 h1 {
@@ -139,10 +160,10 @@ h5 {
   display: inline-block;
   border: none;
   background-color: white;
-  padding: 10px;
+  padding: 0.3090169944rem 1.6180339888rem;
   transition: box-shadow 500ms;
   text-align: center;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 .btn:active span {
@@ -159,7 +180,7 @@ h5 {
 }
 
 .btn .btn-icon + .btn-text {
-  margin-left: 3px;
+  margin-left: 1.6180339888rem, 2;
 }
 
 .btn .btn-text {
@@ -185,6 +206,7 @@ h5 {
 
 .btn-group:hover .btn {
   background-color: rgb(245, 245, 245);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .btn-group:hover .btn span {
@@ -192,19 +214,23 @@ h5 {
 }
 
 .btn-group .btn:first-child {
-  margin-right: 3px;
-}
-
-.btn-group .btn:not(:first-child, :last-child) {
-  margin: 0 3px;
+  margin-right: 0.3090169944rem;
+  border-radius: 1.6180339888rem 0 0 1.6180339888rem;
 }
 
 .btn-group .btn:last-child {
-  margin-left: 3px;
+  margin-left: 0.3090169944rem;
+  border-radius: 0 1.6180339888rem 1.6180339888rem 0;
+}
+
+.btn-group .btn:not(:first-child, :last-child) {
+  margin-left: 0.3090169944rem;
+  margin-right: 0.3090169944rem;
 }
 
 .btn-group .btn:hover {
   background-color: white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .btn-group .btn:hover .btn-icon {
@@ -505,7 +531,7 @@ header nav ul li a:not(:first-child, :last-child) {
 section#hero {
   display: flex;
   margin-bottom: 30px;
-  padding: 30px;
+  padding: 0.3090169944rem;
   padding-top: 20px;
   flex-direction: column-reverse;
   flex-wrap: wrap;
@@ -641,12 +667,19 @@ nav.main-nav ul li a:active {
 }
 
 .floating-btn {
+  transition: all 500ms ease-in-out 20ms;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-  border-radius: 30%;
+  line-height: 1em;
+  padding: 0;
+  border-radius: 50%;
   background-color: rgb(239, 161, 47);
   position: fixed;
   bottom: -100px;
   right: 30px;
+}
+
+.floating-btn:hover {
+  transform: translate(0, -10px);
 }
 
 .floating-btn .btn-icon {
@@ -748,11 +781,12 @@ section#under-construction .prototype img {
 .portfolio-item .header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  align-items: stretch;
+  margin-bottom: 1.6180339888rem;
   flex-direction: column;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   .portfolio-item .header {
     flex-direction: row;
     align-items: center;
@@ -760,36 +794,57 @@ section#under-construction .prototype img {
 }
 
 .portfolio-item .header .btn-group {
-  padding-top: 20px;
+  padding-top: 0.3090169944rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .portfolio-item .header .btn-group {
+    align-self: center;
+  }
 }
 
 .portfolio-item .header .btn-group .btn {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  border-radius: 5px;
-  padding: 3px 10px;
+  flex: 1;
 }
 
-.portfolio-item .header .btn-group .btn:first-child {
-  margin-right: 5px;
-}
-
-.portfolio-item .header .btn-group .btn:last-child {
-  margin-left: 5px;
-}
-
-.portfolio-item .header .btn-group .btn:not(:first-child, :last-child) {
-  margin-left: 5px;
-  margin-right: 5px;
+@media only screen and (min-width: 768px) {
+  .portfolio-item .header .btn-group .btn {
+    flex: none;
+  }
 }
 
 .portfolio-item .header .content {
   display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+@media only screen and (min-width: 992px) {
+  .portfolio-item .header .content {
+    flex-direction: row;
+    text-align: left;
+    align-items: stretch;
+  }
 }
 
 .portfolio-item .header .content .content-logo {
-  width: 64px;
-  height: 64px;
-  padding-right: 20px;
+  max-width: 92px;
+  max-height: 92px;
+  align-self: center;
+}
+
+@media only screen and (min-width: 576px) {
+  .portfolio-item .header .content .content-logo {
+    max-width: 128px;
+    max-height: 128px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .portfolio-item .header .content .content-logo {
+    padding-right: 1.6180339888rem;
+    align-self: flex-start;
+  }
 }
 
 .portfolio-item .header .content .content-logo img {
@@ -921,6 +976,10 @@ section#under-construction .prototype img {
 }
 
 .portfolio-certificates a.certificate figure figcaption {
+  text-align: center;
+}
+
+.portfolio-certificates a.certificate figure figcaption * {
   text-align: center;
 }
 

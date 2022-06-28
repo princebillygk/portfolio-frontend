@@ -1,3 +1,5 @@
+$golden-ratio: 1.61803398875;
+$golden-spacing: math.div($golden-ratio * 1rem - 1, 2.0);
 // core
 $spacer: 1rem;
 $space-values: 0, $spacer * 0.25, $spacer * 0.5, $spacer, $spacer * 1.5, $spacer * 3;
