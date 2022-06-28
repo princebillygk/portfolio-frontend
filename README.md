@@ -6,6 +6,6 @@ You can visit the final product in theses urls:
 
 - [princebillygk@github.io](mailto:princebillygk@github.io)
 
-- [https://princebillygk.azurewebsites.net](https://princebillygk.azurewebsites.net/)
+- [princebillygk.azurewebsites.net](https://princebillygk.azurewebsites.net/)
 
 
