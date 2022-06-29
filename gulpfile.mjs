@@ -22,7 +22,7 @@ import htmlmin from 'gulp-htmlmin'
 const sass = gsass(dsass)
 
 const srcPath = './src'
-const distPath = './dist'
+const distPath = './public'
 
 const source = (loc) => {
     return path.join(srcPath, loc)
@@ -81,9 +81,9 @@ export const js = (cb) => {
 
 export const html = (cb) => {
     src(htmlPath)
-        .pipe(htmlmin({ collapseWhitespace: true }))
-        .pipe(dest(distPath))
+        // .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(rename({ extname: '.tmpl' }))
+        .pipe(dest("./templates"))
     return cb()
 }
 
