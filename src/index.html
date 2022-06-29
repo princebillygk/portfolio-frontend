@@ -38,7 +38,7 @@
         </div>
         <nav>
             <ul>
-                <li><a title="View Source Code" href="https://github.com/princebillyGK/princebillyGK.github.io"
+                <li><a title="View Source Code" href="{{.Meta.SourceCodeURL}}"
                         target="blank"><i class="las la-code-branch"></i></a></li>
                 <li><a title="Share through Telegram" href="http://www.google.com" target="blank"><i
                             class="lab la-telegram"></i></a></li>
@@ -46,7 +46,7 @@
                             class="lab la-whatsapp"></i></a></li>
                 <li><a title="Send as Email" href="http://www.google.com" target="blank"><i
                             class="las la-envelope-square"></i></a></li>
-                <li><a title="Download PDF" href="http://www.google.com" target="blank"><i
+                <li><a title="Download PDF" href="{{.Meta.PdfDownloadURL}}" download><i
                             class="las la-download"></i></a></li>
             </ul>
         </nav>
@@ -57,29 +57,31 @@
             <h1>{{.FirstName}} {{.LastName}}</h1>
             <h5>{{.ProfessionalTitle}}</h5>
 
-            <div class="btn-group">
-                {{range .Profiles}}
-                <a title="{{.Name}}-{{.Username}}" target="_blank" href="{{.URL}}" class="btn">
-                        <span class="btn-icon">
-                            <i class="{{.Icon}}"></i>
-                        </span>
-                        <span class="btn-text">
-                            {{.Name}}
-                        </span>
-                    </a>
-                {{end}}
+            {{if or .Profiles .Contributions}} 
+                <div class="btn-group">
+                    {{range .Profiles}}
+                    <a title="{{.Name}}-{{.Username}}" target="_blank" href="{{.URL}}" class="btn">
+                            <span class="btn-icon">
+                                <i class="{{.Icon}}"></i>
+                            </span>
+                            <span class="btn-text">
+                                {{.Name}}
+                            </span>
+                        </a>
+                    {{end}}
 
-                {{range .Contributions}}
-                <a title="{{.Name}}" target="_blank" href="{{.URL}}" class="btn">
-                        <span class="btn-icon">
-                            <i class="{{.Icon}}"></i>
-                        </span>
-                        <span class="btn-text">
-                            {{.Name}}
-                        </span>
-                    </a>
-                {{end}}
-            </div>
+                    {{range .Contributions}}
+                    <a title="{{.Name}}" target="_blank" href="{{.URL}}" class="btn">
+                            <span class="btn-icon">
+                                <i class="{{.Icon}}"></i>
+                            </span>
+                            <span class="btn-text">
+                                {{.Name}}
+                            </span>
+                        </a>
+                    {{end}}
+                </div>
+            {{end}}
 
         </div>
         <div class="hero-right">
@@ -114,548 +116,287 @@
     </nav>
 
     <main>
-        <section id="experience">
-            <h2>Work Experience</h2>
-            <div>
-                {{range .WorkExperiences }}
-                <div class="portfolio-item">
-                    <div class="header">
-                        <div class="content">
-                            <div class="content-logo">
-                                <img src="{{.Organization.Logo}}" alt="{{.Organization.Title}}">
-                            </div>
-                            <div class="content-description">
-                                <h3>{{.JobTitle}}</h3>
-                                <h5>{{.Organization.Title}}</h5>
-                                {{.Organization.Location}}
-                                <br>
-                                <div class="time-badge">
-                                    <div>
-                                        <i class="las la-calendar-alt"></i>
-                                    </div>
-                                    <div class="time">
-                                        {{.StartMonth}}, {{.StartYear}}
+        {{if .WorkExperiences}}
+            <section id="experience">
+                <h2>Work Experience</h2>
+                <div>
+                    {{range .WorkExperiences }}
+                    <div class="portfolio-item">
+                        <div class="header">
+                            <div class="content">
+                                <div class="content-logo">
+                                    <img src="{{.Organization.Logo}}" alt="{{.Organization.Title}}">
+                                </div>
+                                <div class="content-description">
+                                    <h3>{{.JobTitle}}</h3>
+                                    <h5>{{.Organization.Title}}</h5>
+                                    {{.Organization.Location}}
+                                    <br>
+                                    <div class="time-badge">
+                                        <div>
+                                            <i class="las la-calendar-alt"></i>
+                                        </div>
+                                        <div class="time">
+                                            {{.StartMonth}}, {{.StartYear}}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="btn-group">
+                                <a href="{{.Organization.WebsiteURL}}" class="btn">
+                                    <span class="btn-icon">
+                                        <i class="lab la-safari"></i>
+                                    </span>
+                                    <span class="btn-text">
+                                        Website
+                                    </span>
+                                </a>
+                                <a href="{{.Organization.LinkedinURL}}" class="btn">
+                                    <span class="btn-icon">
+                                        <i class="lab la-linkedin-in"></i>
+                                    </span>
+                                    <span class="btn-text">
+                                       Linkedin
+                                    </span>
+                                </a>
+                            </div>
                         </div>
-                        <div class="btn-group">
-                            <a href="{{.Organization.WebsiteURL}}" class="btn">
-                                <span class="btn-icon">
-                                    <i class="lab la-safari"></i>
-                                </span>
-                                <span class="btn-text">
-                                    Website
-                                </span>
-                            </a>
-                            <a href="{{.Organization.LinkedinURL}}" class="btn">
-                                <span class="btn-icon">
-                                    <i class="lab la-linkedin-in"></i>
-                                </span>
-                                <span class="btn-text">
-                                   Linkedin
-                                </span>
-                            </a>
-                        </div>
-                    </div>
 
-                    <div class="content">
-                        <p>{{.Organization.BriefDescription}}</p>
+                        <div class="content">
+                            <p>{{.Organization.BriefDescription}}</p>
 
-                        <h4>Responsibilities</h4>
-                        <ul class="mc-2-lg list-tick list">
-                            {{range .Responsibilities}}
-                                <li>{{.}}</li>
+                            {{if .Responsibilities}}
+                                <h4>Responsibilities</h4>
+                                <ul class="mc-2-lg list-tick list">
+                                    {{range .Responsibilities}}
+                                        <li>{{.}}</li>
+                                    {{end}}
+                                </ul>
                             {{end}}
-                        </ul>
+                        </div>
                     </div>
+                    {{end}}
                 </div>
-                {{end}}
-            </div>
-            </div>
-        </section>
+                </div>
+            </section>
+        {{end}}
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <div>
-                {{range .Projects }}
-                <div class="portfolio-item">
-                    <div class="header">
-                        <div class="content">
-                            <div class="content-logo">
-                                <img src="{{.Logo}}" alt="{{.Title}}">
-                            </div>
-                            <div class="content-description">
-                                <h3>{{.Title}}</h3>
-                                <h5>{{.ProjectType}}</h5>
-                                {{.Intent}}
-                                <br>
-                                <div class="time-badge">
-                                    <div>
-                                        <i class="las la-calendar-alt"></i>
+        {{if .Projects}}
+            <section id="projects">
+                <h2>Projects</h2>
+                <div>
+                    {{range .Projects }}
+                    <div class="portfolio-item">
+                        <div class="header">
+                            <div class="content">
+                                <div class="content-logo">
+                                    <img src="{{.Logo}}" alt="{{.Title}}">
+                                </div>
+                                <div class="content-description">
+                                    <h3>{{.Title}}</h3>
+                                    <h5>{{.ProjectType}}</h5>
+                                    {{.Intent}}
+                                    <br>
+                                    <div class="time-badge">
+                                        <div>
+                                            <i class="las la-calendar-alt"></i>
+                                        </div>
+                                        <div class="time">
+                                            June, 2021 - June, 2022
+                                        </div>
                                     </div>
-                                    <div class="time">
-                                        June, 2021 - June, 2022
+                                </div>
+                            </div>
+                            <div class="btn-group">
+                                <a href="" class="btn">
+                                    <span class="btn-icon">
+                                        <i class="lab la-github-alt"></i>
+                                    </span>
+                                    <span class="btn-text">
+                                        Src Code
+                                    </span>
+                                </a>
+                                <a href="{{.AppURL}}" class="btn">
+                                    <span class="btn-icon">
+                                        <i class="lab la-safari"></i>
+                                    </span>
+                                    <span class="btn-text">
+                                        Website
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <p>{{.BriefDescription}}</p>
+                        <div class="content">
+                            <div class="mt-5 flex-col-grp-lg">
+                                {{if .Snapshots}}
+                                    <div id="project-lightbox" class="portfolio-gallery flex-col">
+                                        {{range .Snapshots}}
+                                            <a href="{{.URL}}" data-pswp-width="10000"
+                                                data-pswp-height="10000">
+                                                <figure>
+                                                    <img src="{{.URL}}" alt={{.Caption}}>
+                                                    <div class="overlay">
+                                                        <figcaption>{{.Caption}}</figcaption>
+                                                    </div>
+                                                </figure>
+                                            </a>
+                                        {{end}}
+                                    </div>
+                                {{end}}
+                                {{if .AppliedSkills}}
+                                    <div class="flex-col-max">
+                                        <h3>Applied Skills</h3>
+                                        <table class="map-table">
+                                            {{range .AppliedSkills}}
+                                                <tr>
+                                                    <th>{{.Type}}</th>
+                                                    <td>
+                                                        {{ range $index, $element := .Skills}}
+                                                            {{if $index}},{{end}}
+                                                            {{$element}}
+                                                        {{end}}
+                                                    </td>
+                                                </tr>
+                                            {{end}}
+                                        </table>
+                                    </div>
+                                {{end}}
+                            </div>
+
+                        </div>
+                    </div>
+                    {{end}}
+                </div>
+                </div>
+
+            </section>
+        {{end}}
+        {{if .Educations}}
+            <section id="education">
+                <h2>Education</h2>
+                <div>
+                    {{range .Educations}}
+                    <div class="portfolio-item">
+                        <div class="header">
+                            <div class="content">
+                                <div class="content-logo">
+                                    <img src="{{.School.Logo}}" alt="{{.School.Name}}">
+                                </div>
+                                <div class="content-description">
+                                    <h3>{{.CourseTitle}}</h3>
+                                    <h5>{{.School.Name}}</h5>
+                                    {{.School.Location}}
+                                    <br>
+                                    <div class="time-badge">
+                                        <div>
+                                            <i class="las la-calendar-alt"></i>
+                                        </div>
+                                        <div class="time">
+                                            {{.StartYear}} - {{if .EndYear}}{{.EndYear}}{{else}}Current{{end}}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="btn-group">
-                            <a href="" class="btn">
-                                <span class="btn-icon">
-                                    <i class="lab la-github-alt"></i>
-                                </span>
-                                <span class="btn-text">
-                                    Src Code
-                                </span>
-                            </a>
-                            <a href="{{.AppURL}}" class="btn">
-                                <span class="btn-icon">
-                                    <i class="lab la-safari"></i>
-                                </span>
-                                <span class="btn-text">
-                                    Website
-                                </span>
-                            </a>
+                        <div class="content">
+                            <table class="map-table">
+                                <tr>
+                                    <th>{{.Grade.Type}}</th>
+                                    <td>{{.Grade.AcquiredScore}} out of {{.Grade.Scale}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Session</th>
+                                    <td>{{.Session}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Board</th>
+                                    <td>{{.Board}}</td>
+                                </tr>
+                            </table>
+
+                            {{if .Achievements}}
+                                <h4>Achievements</h4>
+                                <ul class="mc-2-lg list list-goal">
+                                        {{range .Achievements}}
+                                            <li>{{.}}</li>
+                                        {{end}}
+                                </ul>
+                            {{end}}
                         </div>
                     </div>
-                    <p>{{.BriefDescription}}</p>
-                    <div class="content">
-                        <div class="mt-5 flex-col-grp-lg">
-                            <div id="project-lightbox" class="portfolio-gallery flex-col">
-                                {{range .Snapshots}}
-                                    <a href="{{.URL}}" data-pswp-width="10000"
-                                        data-pswp-height="10000">
-                                        <figure>
-                                            <img src="{{.URL}}" alt={{.Caption}}>
-                                            <div class="overlay">
-                                                <figcaption>{{.Caption}}</figcaption>
+                    {{end}}
+                </div>
+                </div>
+            </section>
+        {{end}}
+        {{if .Skills}}
+            <section id="skills">
+                <h2>Skills</h2>
+                <div class="mc-2-md mc-4-lg">
+                    {{range .Skills}}
+                        <div class="skill-group pb-5">
+                            <h3>{{.Type}}</h3>
+                            {{if .Skills}}
+                                <ul class="list icon-list">
+                                    {{range .Skills}}
+                                    <li><img src="{{.Icon}}" style="width: 11pt;margin-right:5px;vertical-align:middle;">{{.Name}}</li>
+                                    {{end}}
+                                </ul>
+                            {{end}}
+                        </div>
+                    {{end}}
+                </div>
+                </div>
+            </section>
+        {{end}}
+
+        {{if .Certificates}}
+            <section id="certificates">
+                <h2>Certificates</h2>
+                {{range .Certificates}}
+                    <div>
+                        <h3 class="mb-5">
+                            {{.Type}}
+                        </h3>
+                        {{if .Certificates}}
+                            <div id="certificate-lightbox" class="portfolio-certificates">
+                                {{range .Certificates}}
+                                <a class="certificate" href="{{.Image}}"
+                                        data-pswp-width="10000" data-pswp-height="10000">
+                                        <figure class="certificate">
+                                            <div class="container">
+                                                <img src="{{.Image}}" alt="">
                                             </div>
+                                            <figcaption>
+                                                <h5>{{.Name}}</h5>
+                                                <p class="h6">{{.Provider}}</p>
+                                                {{.Year}}
+                                            </figcaption>
                                         </figure>
                                     </a>
                                 {{end}}
                             </div>
-                            <div class="flex-col-max">
-                                <h3>Applied Skills</h3>
-                                <table class="map-table">
-                                    {{range .AppliedSkills}}
-                                        <tr>
-                                            <th>{{.Type}}</th>
-                                            <td>
-                                                {{ range $index, $element := .Skills}}
-                                                    {{if $index}},{{end}}
-                                                    {{$element}}
-                                                {{end}}
-                                            </td>
-                                        </tr>
-                                    {{end}}
-                                </table>
-                            </div>
-                        </div>
-
+                        {{end}}
                     </div>
-                </div>
                 {{end}}
-            </div>
 
+                </div>
+            </section>
+        {{end}}
 
-            </div>
-
-        </section>
-        <section id="education">
-            <h2>Education</h2>
-            <div>
-                <div class="portfolio-item">
-                    <div class="header">
-                        <div class="content">
-                            <div class="content-logo">
-                                <img src="./assets/img/abo.png" alt="Anondo Bazar">
-                            </div>
-                            <div class="content-description">
-                                <h3>Exam/Degree Name</h3>
-                                <h5>School Name</h5>
-                                School Location
-                                <br>
-                                <div class="time-badge">
-                                    <div>
-                                        <i class="las la-calendar-alt"></i>
-                                    </div>
-                                    <div class="time">
-                                        June, 2021 - June, 2022
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <table class="map-table">
-                            <tr>
-                                <th>GPA</th>
-                                <td>5.0 out of 5.0</td>
-                            </tr>
-                            <tr>
-                                <th>Session</th>
-                                <td>2019-2020</td>
-                            </tr>
-                            <tr>
-                                <th>Board</th>
-                                <td>Dhaka</td>
-                            </tr>
-                        </table>
-
-                        <h4>Achievements</h4>
-                        <ul class="mc-2-lg list list-goal">
-                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, cum.</li>
-                            <li>Molestias cumque, voluptatum illo soluta rerum numquam nemo omnis consequuntur.</li>
-                            <li>Quo eum officia dolores illum nostrum consequatur cum corporis consequuntur.</li>
-                            <li>Temporibus numquam recusandae consectetur vitae error eius aliquam, dolores nobis!</li>
-                            <li>Ipsa id excepturi repellat magni quasi est ad deleniti autem?</li>
-                            <li>Architecto, aliquam tempora. Eum dolores impedit, perspiciatis eius consequatur numquam?
-                            </li>
-                            <li>Consequuntur ratione sed nam perferendis aut alias quae labore repellat?</li>
-                            <li>Facere dolorem nihil a magnam, eum eius ratione mollitia voluptates.</li>
-                            <li>Harum ullam officia sint modi. Tempora quis at ipsa nesciunt.</li>
-                            <li>Deleniti architecto, similique saepe deserunt facilis fuga non eligendi neque.</li>
-
-                        </ul>
-                    </div>
+        {{if .Interests}}
+            <section id="interests">
+                <h2>Interests</h2>
+                <div>
+                    {{range .Interests}}
+                        <span class="badge faded">
+                            {{.}}
+                        </span>
+                    {{end}}
                 </div>
-            </div>
-            </div>
-        </section>
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="mc-2-md mc-4-lg">
-                <div class="skill-group pb-5">
-                    <h3>Skill Type</h3>
-                    <ul class="list icon-list">
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                    </ul>
-                </div>
-                <div class="skill-group pb-5">
-                    <h3>Skill Type</h3>
-                    <ul class="list icon-list">
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                    </ul>
-                </div>
-                <div class="skill-group pb-5">
-                    <h3>Skill Type</h3>
-                    <ul class="list icon-list">
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                    </ul>
-                </div>
-                <div class="skill-group pb-5">
-                    <h3>Skill Type</h3>
-                    <ul class="list icon-list">
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                    </ul>
-                </div>
-                <div class="skill-group pb-5">
-                    <h3>Skill Type</h3>
-                    <ul class="list icon-list">
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                    </ul>
-                </div>
-                <div class="skill-group pb-5">
-                    <h3>Skill Type</h3>
-                    <ul class="list icon-list">
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                    </ul>
-                </div>
-                <div class="skill-group pb-5">
-                    <h3>Skill Type</h3>
-                    <ul class="list icon-list">
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                    </ul>
-                </div>
-                <div class="skill-group pb-5">
-                    <h3>Skill Type</h3>
-                    <ul class="list icon-list">
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                    </ul>
-                </div>
-                <div class="skill-group pb-5">
-                    <h3>Skill Type</h3>
-                    <ul class="list icon-list">
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                    </ul>
-                </div>
-                <div class="skill-group pb-5">
-                    <h3>Skill Type</h3>
-                    <ul class="list icon-list">
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                    </ul>
-                </div>
-                <div class="skill-group pb-5">
-                    <h3>Skill Type</h3>
-                    <ul class="list icon-list">
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                    </ul>
-                </div>
-                <div class="skill-group pb-5">
-                    <h3>Skill Type</h3>
-                    <ul class="list icon-list">
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                        <li><i class="devicon-mysql-plain colored"></i>Mysql</li>
-                    </ul>
-                </div>
-            </div>
-            </div>
-        </section>
-        <section id="certificates">
-            <h2>Certificates</h2>
-            <div>
-                <h3 class="mb-5">
-                    Certificate Type
-                </h3>
-                <div id="certificate-lightbox" class="portfolio-certificates">
-                    <a class="certificate" href="https://dummyimage.com/500/FBFAB9/000?text=Certificate"
-                        data-pswp-width="10000" data-pswp-height="10000">
-                        <figure class="certificate">
-                            <div class="container">
-                                <img src="https://dummyimage.com/500/FBFAB9/000?text=Certificate" alt="">
-                            </div>
-                            <figcaption>
-                                <h5>Certificate Subject</h5>
-                                <p class="h6">Provider</p>
-                                Year
-                            </figcaption>
-                        </figure>
-                    </a>
-
-                    <a class="certificate" href="https://dummyimage.com/500/FBFAB9/000?text=Certificate"
-                        data-pswp-width="10000" data-pswp-height="10000">
-                        <figure class="certificate">
-                            <div class="container">
-                                <img src="https://dummyimage.com/500/FBFAB9/000?text=Certificate" alt="">
-                            </div>
-                            <figcaption>
-                                <h5>Certificate Subject</h5>
-                                <p class="h6">Provider</p>
-                                Year
-                            </figcaption>
-                        </figure>
-                    </a>
-                    <a class="certificate" href="https://dummyimage.com/500/FBFAB9/000?text=Certificate"
-                        data-pswp-width="10000" data-pswp-height="10000">
-                        <figure class="certificate">
-                            <div class="container">
-                                <img src="https://dummyimage.com/500/FBFAB9/000?text=Certificate" alt="">
-                            </div>
-                            <figcaption>
-                                <h5>Certificate Subject</h5>
-                                <p class="h6">Provider</p>
-                                Year
-                            </figcaption>
-                        </figure>
-                    </a>
-                    <a class="certificate" href="https://dummyimage.com/500/FBFAB9/000?text=Certificate"
-                        data-pswp-width="10000" data-pswp-height="10000">
-                        <figure class="certificate">
-                            <div class="container">
-                                <img src="https://dummyimage.com/500/FBFAB9/000?text=Certificate" alt="">
-                            </div>
-                            <figcaption>
-                                <h5>Certificate Subject</h5>
-                                <p class="h6">Provider</p>
-                                Year
-                            </figcaption>
-                        </figure>
-                    </a>
-                    <a class="certificate" href="https://dummyimage.com/500/FBFAB9/000?text=Certificate"
-                        data-pswp-width="10000" data-pswp-height="10000">
-                        <figure class="certificate">
-                            <div class="container">
-                                <img src="https://dummyimage.com/500/FBFAB9/000?text=Certificate" alt="">
-                            </div>
-                            <figcaption>
-                                <h5>Certificate Subject</h5>
-                                <p class="h6">Provider</p>
-                                Year
-                            </figcaption>
-                        </figure>
-                    </a>
-                    <a class="certificate" href="https://dummyimage.com/500/FBFAB9/000?text=Certificate"
-                        data-pswp-width="10000" data-pswp-height="10000">
-                        <figure class="certificate">
-                            <div class="container">
-                                <img src="https://dummyimage.com/500/FBFAB9/000?text=Certificate" alt="">
-                            </div>
-                            <figcaption>
-                                <h5>Certificate Subject</h5>
-                                <p class="h6">Provider</p>
-                                Year
-                            </figcaption>
-                        </figure>
-                    </a>
-                    <a class="certificate" href="https://dummyimage.com/500/FBFAB9/000?text=Certificate"
-                        data-pswp-width="10000" data-pswp-height="10000">
-                        <figure class="certificate">
-                            <div class="container">
-                                <img src="https://dummyimage.com/500/FBFAB9/000?text=Certificate" alt="">
-                            </div>
-                            <figcaption>
-                                <h5>Certificate Subject</h5>
-                                <p class="h6">Provider</p>
-                                Year
-                            </figcaption>
-                        </figure>
-                    </a>
-                    <a class="certificate" href="https://dummyimage.com/500/FBFAB9/000?text=Certificate"
-                        data-pswp-width="10000" data-pswp-height="10000">
-                        <figure class="certificate">
-                            <div class="container">
-                                <img src="https://dummyimage.com/500/FBFAB9/000?text=Certificate" alt="">
-                            </div>
-                            <figcaption>
-                                <h5>Certificate Subject</h5>
-                                <p class="h6">Provider</p>
-                                Year
-                            </figcaption>
-                        </figure>
-                    </a>
-                    <a class="certificate" href="https://dummyimage.com/500/FBFAB9/000?text=Certificate"
-                        data-pswp-width="10000" data-pswp-height="10000">
-                        <figure class="certificate">
-                            <div class="container">
-                                <img src="https://dummyimage.com/500/FBFAB9/000?text=Certificate" alt="">
-                            </div>
-                            <figcaption>
-                                <h5>Certificate Subject</h5>
-                                <p class="h6">Provider</p>
-                                Year
-                            </figcaption>
-                        </figure>
-                    </a>
-                    <a class="certificate" href="https://dummyimage.com/500/FBFAB9/000?text=Certificate"
-                        data-pswp-width="10000" data-pswp-height="10000">
-                        <figure class="certificate">
-                            <div class="container">
-                                <img src="https://dummyimage.com/500/FBFAB9/000?text=Certificate" alt="">
-                            </div>
-                            <figcaption>
-                                <h5>Certificate Subject</h5>
-                                <p class="h6">Provider</p>
-                                Year
-                            </figcaption>
-                        </figure>
-                    </a>
-                    <a class="certificate" href="https://dummyimage.com/500/FBFAB9/000?text=Certificate"
-                        data-pswp-width="10000" data-pswp-height="10000">
-                        <figure class="certificate">
-                            <div class="container">
-                                <img src="https://dummyimage.com/500/FBFAB9/000?text=Certificate" alt="">
-                            </div>
-                            <figcaption>
-                                <h5>Certificate Subject</h5>
-                                <p class="h6">Provider</p>
-                                Year
-                            </figcaption>
-                        </figure>
-                    </a>
-                </div>
-            </div>
-
-            </div>
-        </section>
-        <section id="interests">
-            <h2>Interests</h2>
-            <div>
-                <span class="badge faded">
-                    Reddit
-                </span>
-
-                <span class="badge faded">
-                    Automation
-                </span>
-                <span class="badge faded">
-                    Microelectronics and Microcontrollers
-                </span>
-                <span class="badge faded">
-                    youtube
-                </span>
-                <span class="badge faded">
-                    Series
-                </span>
-                <span class="badge faded">
-                    Movie
-                </span>
-                <span class="badge faded">
-                    Batminton
-                </span>
-            </div>
-        </section>
+            </section>
+        {{end}}
     </main>
 
 
