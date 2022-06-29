@@ -83,6 +83,7 @@ export const html = (cb) => {
     src(htmlPath)
         .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(dest(distPath))
+        .pipe(rename({ extname: '.tmpl' }))
     return cb()
 }
 
