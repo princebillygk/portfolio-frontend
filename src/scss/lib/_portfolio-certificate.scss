@@ -1,6 +1,7 @@
 .portfolio-certificates {
     display: grid;
     grid-template-columns: auto;
+    align-items: start;
     gap: 10px;
 
     @include mq-medium{
