@@ -879,12 +879,11 @@ section#under-construction .prototype img {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-  flex-shrink: 1;
 }
 
 .portfolio-item .header .content .content-description {
-  flex-shrink: 1;
   margin-right: 20px;
+  max-width: 500px;
 }
 
 @media only screen and (min-width: 992px) {
