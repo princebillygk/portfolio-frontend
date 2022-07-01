@@ -779,15 +779,23 @@ section#under-construction .prototype img {
   height: 100%;
 }
 
+.portfolio-item {
+  margin-bottom: 80px;
+}
+
 .portfolio-item .flex-col-grp-lg {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-direction: column;
 }
 
 .portfolio-item .flex-col-grp-lg .flex-col {
   flex: 1 1 auto;
+}
+
+.portfolio-item .flex-col-grp-lg .portfolio-gallery {
+  flex: 0 0 auto;
 }
 
 .portfolio-item .flex-col-grp-lg .flex-col:not(:last-child, :first-child) {
