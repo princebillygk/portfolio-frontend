@@ -85,20 +85,29 @@
             display: flex;
             flex-direction: row-reverse;
             justify-content: space-between;
-
+            flex-shrink: 1;
+            
+            .content-description {
+                flex-shrink: 1;
+                margin-right: 20px;
+            }
 
             @include mq-large{
                 flex-direction: row;
                 text-align: left;
-                align-items: stretch;
+                justify-content: flex-start;
             }
 
             .content-logo {
+                min-width: 92px;
+                min-height: 92px;
                 max-width: 92px;
                 max-height: 92px;
                 align-self: center;
 
                 @include mq-small {
+                    min-width: 128px;
+                    min-height: 128px;
                     max-width: 128px;
                     max-height: 128px;
                 }
@@ -110,6 +119,7 @@
 
                 img {
                     width: 100%;
+                    object-fit: contain;
                 }
             }
         }

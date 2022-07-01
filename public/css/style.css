@@ -879,17 +879,25 @@ section#under-construction .prototype img {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
+  flex-shrink: 1;
+}
+
+.portfolio-item .header .content .content-description {
+  flex-shrink: 1;
+  margin-right: 20px;
 }
 
 @media only screen and (min-width: 992px) {
   .portfolio-item .header .content {
     flex-direction: row;
     text-align: left;
-    align-items: stretch;
+    justify-content: flex-start;
   }
 }
 
 .portfolio-item .header .content .content-logo {
+  min-width: 92px;
+  min-height: 92px;
   max-width: 92px;
   max-height: 92px;
   align-self: center;
@@ -897,6 +905,8 @@ section#under-construction .prototype img {
 
 @media only screen and (min-width: 576px) {
   .portfolio-item .header .content .content-logo {
+    min-width: 128px;
+    min-height: 128px;
     max-width: 128px;
     max-height: 128px;
   }
@@ -911,6 +921,7 @@ section#under-construction .prototype img {
 
 .portfolio-item .header .content .content-logo img {
   width: 100%;
+  object-fit: contain;
 }
 
 .portfolio-gallery {
