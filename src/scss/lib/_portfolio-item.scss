@@ -1,14 +1,18 @@
 .portfolio-item {
+    margin-bottom: 8em;
     .flex-col-grp-lg {
         $min-space: nth($space-values, 5);
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
         flex-direction: column;
 
         .flex-col {
             flex: 1 1 auto;
+        }
 
+        .portfolio-gallery {
+            flex: 0 0 auto;
         }
 
 
