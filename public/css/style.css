@@ -1038,6 +1038,7 @@ section#under-construction .prototype img {
 }
 
 .map-table {
+  width: 100%;
   text-align: left;
   vertical-align: top;
 }
