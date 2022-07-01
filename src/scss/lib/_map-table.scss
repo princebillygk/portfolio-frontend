@@ -1,13 +1,27 @@
 .map-table {
-    width: 100%;
     $cellX-gap: 5px;
     $cellY-gap: 10px;
 
+    width: 100%;
     text-align: left;
     vertical-align: top;
 
+    .map-table {
+        width: 100%;
+    }
+
     tr:not(tr:last-child) {
         border-bottom: 1px solid $color-blue;
+    }
+
+    td {
+        width: 100%;
+    }
+
+    @include mq-small {
+        th {
+            width: 10rem;
+        }
     }
 
     th, td {

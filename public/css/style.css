@@ -3,7 +3,7 @@
    License: none (public domain)
 */
 
-html,body,div,span,h1,h2,h3,h4,h5,h6,p,a,address,code,img,q,i,ul,li,table,tr,th,td,figure,figcaption,header,main,nav,section,time {
+html,body,div,span,h1,h2,h3,h4,h5,h6,p,a,code,img,q,i,ul,li,table,caption,tr,th,td,figure,figcaption,header,main,nav,section,time {
   margin: 0;
   padding: 0;
   border: 0;
@@ -133,15 +133,15 @@ h6,.h6 {
 }
 
 h1 {
-  color: rgb(23, 50, 24);
+  color: #173218;
 }
 
 h3 {
-  color: rgb(19, 124, 167);
+  color: #137ca7;
 }
 
 h5 {
-  color: rgb(239, 161, 47);
+  color: #efa12f;
 }
 
 .rounded {
@@ -153,7 +153,7 @@ h5 {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   border-style: solid;
   border-width: 3px;
-  border-color: rgb(236, 247, 238);
+  border-color: #ecf7ee;
 }
 
 .btn {
@@ -167,7 +167,7 @@ h5 {
 }
 
 .btn:active span {
-  color: rgb(76, 32, 18);
+  color: #4c2012;
 }
 
 .btn span {
@@ -175,7 +175,7 @@ h5 {
 }
 
 .btn .btn-icon {
-  color: rgb(239, 161, 47);
+  color: #efa12f;
   font-size: 16pt;
 }
 
@@ -185,7 +185,7 @@ h5 {
 
 .btn .btn-text {
   text-transform: uppercase;
-  color: rgb(19, 124, 167);
+  color: #137ca7;
   font-family: "IBM Plex Mono", monospace;
   font-weight: 800;
   font-size: 12pt;
@@ -196,8 +196,8 @@ h5 {
 }
 
 .btn:active {
-  background-color: rgb(236, 247, 238);
-  color: rgb(239, 161, 47);
+  background-color: #ecf7ee;
+  color: #efa12f;
 }
 
 .btn-group {
@@ -205,7 +205,7 @@ h5 {
 }
 
 .btn-group:hover .btn {
-  background-color: rgb(245, 245, 245);
+  background-color: whitesmoke;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
@@ -234,11 +234,11 @@ h5 {
 }
 
 .btn-group .btn:hover .btn-icon {
-  color: rgb(239, 161, 47);
+  color: #efa12f;
 }
 
 .btn-group .btn:hover .btn-text {
-  color: rgb(19, 124, 167);
+  color: #137ca7;
 }
 
 @media only screen and (min-width: 768px) {
@@ -302,6 +302,15 @@ h5 {
   padding: 0;
 }
 
+.px-1 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.pt-1 {
+  padding-top: 0;
+}
+
 .pb-1 {
   padding-bottom: 0;
 }
@@ -321,6 +330,15 @@ h5 {
 
 .p-2 {
   padding: 0.25rem;
+}
+
+.px-2 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.pt-2 {
+  padding-top: 0.25rem;
 }
 
 .pb-2 {
@@ -344,6 +362,15 @@ h5 {
   padding: 0.5rem;
 }
 
+.px-3 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.pt-3 {
+  padding-top: 0.5rem;
+}
+
 .pb-3 {
   padding-bottom: 0.5rem;
 }
@@ -363,6 +390,15 @@ h5 {
 
 .p-4 {
   padding: 1rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
 }
 
 .pb-4 {
@@ -386,6 +422,15 @@ h5 {
   padding: 1.5rem;
 }
 
+.px-5 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.pt-5 {
+  padding-top: 1.5rem;
+}
+
 .pb-5 {
   padding-bottom: 1.5rem;
 }
@@ -407,6 +452,15 @@ h5 {
   padding: 3rem;
 }
 
+.px-6 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.pt-6 {
+  padding-top: 3rem;
+}
+
 .pb-6 {
   padding-bottom: 3rem;
 }
@@ -416,7 +470,7 @@ section {
 }
 
 .time-badge {
-  background-color: rgb(236, 247, 238);
+  background-color: #ecf7ee;
   padding: 10px 20px;
   margin: 10px 0;
   border-radius: 20rem;
@@ -427,7 +481,7 @@ section {
   border-left: 1px solid black;
   margin-left: 5px;
   padding-left: 3px;
-  color: rgb(76, 32, 18);
+  color: #4c2012;
   font-weight: bold;
 }
 
@@ -456,7 +510,7 @@ header {
 header .branding {
   display: flex;
   align-items: center;
-  color: rgb(23, 50, 24);
+  color: #173218;
   text-transform: uppercase;
   font-family: "IBM Plex Mono", monospace;
   font-weight: 800;
@@ -475,9 +529,9 @@ header nav ul {
 header nav ul li a {
   display: inline-block;
   padding: 2px;
-  border: 2px dotted rgb(239, 161, 47);
+  border: 2px dotted #efa12f;
   border-radius: 3px;
-  color: rgb(239, 161, 47);
+  color: #efa12f;
   transition: all 400ms ease-in-out;
   text-transform: uppercase;
   font-family: "IBM Plex Mono", monospace;
@@ -493,7 +547,7 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-  background-color: rgb(239, 161, 47);
+  background-color: #efa12f;
   color: white;
   border-color: white;
 }
@@ -583,7 +637,7 @@ section#hero figure.my-photo figcaption {
   left: 50%;
   transform: translate(-50%, 0%);
   opacity: 0%;
-  background-color: rgb(19, 124, 167);
+  background-color: #137ca7;
   color: white;
   margin: 20px;
   padding: 10px 10px;
@@ -619,7 +673,7 @@ nav.main-nav ul li a {
   display: block;
   transition: box-shadow 400ms ease-in-out;
   padding: 10px;
-  color: rgb(19, 124, 167);
+  color: #137ca7;
   text-transform: uppercase;
   font-family: "IBM Plex Mono", monospace;
   font-weight: 600;
@@ -647,14 +701,14 @@ nav.main-nav ul li a .text {
 
 nav.main-nav ul li a:hover {
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-  color: rgb(239, 161, 47);
+  color: #efa12f;
   border-radius: 10px 10px 0 0;
   font-weight: 800;
 }
 
 nav.main-nav ul li a:active {
-  color: rgb(76, 32, 18);
-  background-color: rgb(236, 247, 238);
+  color: #4c2012;
+  background-color: #ecf7ee;
   box-shadow: none;
 }
 
@@ -663,7 +717,7 @@ nav.main-nav ul li a:active {
   position: fixed;
   top: 0;
   width: 100%;
-  border-bottom: 3px solid rgb(239, 161, 47);
+  border-bottom: 3px solid #efa12f;
 }
 
 .floating-btn {
@@ -672,7 +726,7 @@ nav.main-nav ul li a:active {
   line-height: 1em;
   padding: 0;
   border-radius: 50%;
-  background-color: rgb(239, 161, 47);
+  background-color: #efa12f;
   position: fixed;
   bottom: -100px;
   right: 30px;
@@ -683,7 +737,7 @@ nav.main-nav ul li a:active {
 }
 
 .floating-btn .btn-icon {
-  color: rgb(236, 247, 238);
+  color: #ecf7ee;
   padding: 0px;
   margin: 0px;
 }
@@ -706,13 +760,13 @@ section#under-construction h1 {
   margin-top: 50px;
   text-transform: uppercase;
   font-size: 32pt;
-  border: 2px dotted rgb(239, 161, 47);
-  color: rgb(23, 50, 24);
+  border: 2px dotted #efa12f;
+  color: #173218;
   display: inline-block;
 }
 
 section#under-construction h1 i {
-  color: rgb(239, 161, 47);
+  color: #efa12f;
 }
 
 section#under-construction .prototype {
@@ -730,6 +784,10 @@ section#under-construction .prototype img {
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
+}
+
+.portfolio-item .flex-col-grp-lg .flex-col {
+  flex-grow: 1;
 }
 
 .portfolio-item .flex-col-grp-lg .flex-col:not(:last-child, :first-child) {
@@ -990,7 +1048,17 @@ section#under-construction .prototype img {
 }
 
 .map-table tr:not(tr:last-child) {
-  border-bottom: 1px solid rgb(19, 124, 167);
+  border-bottom: 1px solid #137ca7;
+}
+
+.map-table td {
+  width: 100%;
+}
+
+@media only screen and (min-width: 576px) {
+  .map-table th {
+    width: 10rem;
+  }
 }
 
 .map-table th,.map-table td {

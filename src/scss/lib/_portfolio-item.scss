@@ -6,6 +6,12 @@
         justify-content: space-between;
         flex-direction: column;
 
+        .flex-col {
+            flex: 1 1 auto;
+
+        }
+
+
         .flex-col:not(:last-child, :first-child) {
             @include spaceY(margin, $min-space);
         }
@@ -38,11 +44,6 @@
                 margin-left: $min-space;
             }
         }
-
-        flex-col-max {
-            flex-grow: 1;
-        }
-
     }
 
     p {
