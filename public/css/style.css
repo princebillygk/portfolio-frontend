@@ -780,7 +780,7 @@ section#under-construction .prototype img {
 }
 
 .portfolio-item {
-  margin-bottom: 5em;
+  margin-bottom: 7em;
 }
 
 .portfolio-item .flex-col-grp-lg {
@@ -1007,15 +1007,30 @@ section#under-construction .prototype img {
 }
 
 .portfolio-certificates {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto;
+  align-items: start;
+  gap: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .portfolio-certificates {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .portfolio-certificates {
+    grid-template-columns: auto auto auto;
+  }
 }
 
 .portfolio-certificates a.certificate {
-  display: inline-block;
-  padding-bottom: 30px;
+  max-width: 300px;
+  display: block;
   text-decoration: none;
   color: #000;
+  text-align: center;
   margin: auto;
 }
 
