@@ -6,6 +6,10 @@
         justify-content: space-between;
         flex-direction: column;
 
+        table {
+            width: 100%;
+        }
+
         .flex-col:not(:last-child, :first-child) {
             @include spaceY(margin, $min-space);
         }

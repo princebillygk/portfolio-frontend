@@ -786,6 +786,10 @@ section#under-construction .prototype img {
   flex-direction: column;
 }
 
+.portfolio-item .flex-col-grp-lg table {
+  width: 100%;
+}
+
 .portfolio-item .flex-col-grp-lg .flex-col:not(:last-child, :first-child) {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -1038,7 +1042,6 @@ section#under-construction .prototype img {
 }
 
 .map-table {
-  width: 100%;
   text-align: left;
   vertical-align: top;
 }
