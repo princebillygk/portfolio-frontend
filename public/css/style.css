@@ -1010,6 +1010,9 @@ section#under-construction .prototype img {
   display: grid;
   grid-template-columns: auto;
   align-items: start;
+  justify-items: center;
+  align-content: start;
+  justify-content: space-evenly;
   gap: 10px;
 }
 
