@@ -787,7 +787,7 @@ section#under-construction .prototype img {
 }
 
 .portfolio-item .flex-col-grp-lg .flex-col {
-  flex-grow: 1;
+  flex: 1 1 auto;
 }
 
 .portfolio-item .flex-col-grp-lg .flex-col:not(:last-child, :first-child) {
@@ -826,10 +826,6 @@ section#under-construction .prototype img {
   .portfolio-item .flex-col-grp-lg .flex-col:last-child {
     margin-left: 1.5rem;
   }
-}
-
-.portfolio-item .flex-col-grp-lg flex-col-max {
-  flex-grow: 1;
 }
 
 .portfolio-item p {
@@ -1045,6 +1041,10 @@ section#under-construction .prototype img {
   width: 100%;
   text-align: left;
   vertical-align: top;
+}
+
+.map-table .map-table {
+  width: 100%;
 }
 
 .map-table tr:not(tr:last-child) {
