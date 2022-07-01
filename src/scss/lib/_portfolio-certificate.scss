@@ -1,12 +1,21 @@
 .portfolio-certificates {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 10px;
+
+    @include mq-medium{
+        grid-template-columns: auto auto
+    }
+
+    @include mq-large{
+        grid-template-columns: auto auto auto;
+    }
 
     a.certificate {
-        display: inline-block;
-        padding-bottom: 30px;
+        display: block;
         text-decoration: none;
         color: #000;
+        text-align: center;
 
         figure {
             .container {
