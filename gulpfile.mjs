@@ -18,6 +18,9 @@ import pcss from 'gulp-postcss'
 
 import htmlmin from 'gulp-htmlmin'
 
+import debug from 'gulp-debug'
+import gh from 'gulp-gh-pages'
+
 
 const sass = gsass(dsass)
 
@@ -92,6 +95,14 @@ export const image = (cb) => {
         .pipe(imgmin())
         .pipe(dest(destination('./assets/img/')))
     return cb()
+}
+
+export const ghpage = (cb) =>{
+    src(destination("./**/*"))
+        .pipe(debug())
+        .pipe(gh())
+        .pipe(debug())
+    cb()
 }
 
 export const build = series(js, image, html, vendor,  css)
