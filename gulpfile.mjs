@@ -101,8 +101,8 @@ export const ghpage = (cb) =>{
     src(destination("./**/*"))
         .pipe(debug())
         .pipe(gh([{
-            origin: "ghpage",
-            branch: "main"
+            force: true,
+            branch: "main",
         }]))
         .pipe(debug())
     cb()
