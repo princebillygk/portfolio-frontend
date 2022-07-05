@@ -100,7 +100,9 @@ export const image = (cb) => {
 export const ghpage = (cb) =>{
     src(destination("./**/*"))
         .pipe(debug())
-        .pipe(gh())
+        .pipe(gh([{
+            origin: "ghpage",
+        }]))
         .pipe(debug())
     cb()
 }
