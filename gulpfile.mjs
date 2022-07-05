@@ -102,6 +102,7 @@ export const ghpage = (cb) =>{
         .pipe(debug())
         .pipe(gh([{
             origin: "ghpage",
+            branch: "main"
         }]))
         .pipe(debug())
     cb()
