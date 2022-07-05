@@ -100,10 +100,7 @@ export const image = (cb) => {
 export const ghpage = (cb) =>{
     src(destination("./**/*"))
         .pipe(debug())
-        .pipe(gh([{
-            force: true,
-            branch: "main",
-        }]))
+        .pipe(gh([{ force: true }]))
         .pipe(debug())
     cb()
 }
