@@ -4,9 +4,9 @@ This is the frontend portion of my portfolio, which I developed. The�
 
 This is full responsive webpage. The page informations updates automatically from database when any informations get updated. For information see the repository named "portfolio-backend". You can visit the final product in theses urls:
 
-- Updates automatically <a href="https://princebillygk.github.io/" target="blank">princebillygk.github.io</a>
+- Always Up to date: <a href="https://princebillygk.azurewebsites.net/" target="blank">princebillygk.azurewebsites.net</a>
+- Doesn't update immediately: <a href="https://princebillygk.github.io/" target="blank">princebillygk.github.io</a>
 
-- Updates immediately <a href="https://princebillygk.azurewebsites.net/" target="blank">princebillygk.azurewebsites.net</a>
 
 
 
