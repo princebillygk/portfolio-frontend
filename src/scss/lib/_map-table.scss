@@ -1,5 +1,5 @@
 .map-table {
-    $cellX-gap: 5px;
+    $cellX-gap: 10px;
     $cellY-gap: 10px;
 
     width: 100%;
@@ -16,23 +16,21 @@
 
     td {
         width: 100%;
+        padding-left: $cellX-gap;
     }
 
-    @include mq-small {
-        th {
-            width: 10rem;
-        }
-    }
 
-    th, td {
+    th,
+    td {
         @include spaceY(padding, $cellY-gap);
     }
 
     th {
         font-weight: bold;
         padding-right: $cellX-gap;
-    }
-    td {
-        padding-left: $cellX-gap;
+
+        @include mq-small {
+            width: 10rem;
+        }
     }
 }
