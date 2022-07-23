@@ -1,0 +1,54 @@
+.card-group {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 20px;
+
+    @include mq-small {
+        grid-template-columns: auto auto;
+    }
+
+    @include mq-medium {
+        grid-template-columns: auto auto auto;
+    }
+
+    @include mq-large {
+        grid-template-columns: auto auto auto auto;
+    }
+}
+
+.card {
+    padding: 20px;
+    border-radius: $golden-ratio * 2px;
+    @include mat-shadow(1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .body{
+        @include spaceY(margin, 20px);
+    }
+
+    .footer {
+        align-self: center;
+    }
+
+    .header {
+        border-bottom: 1px solid darken($color-faded-green, 20);
+        .content-heading {
+            display: flex;
+            align-items: center;
+            .logo {
+                width: 32px;
+                height: 32px;
+                object-fit: contain;
+                padding-right: 15px;
+            } 
+        }
+        .badge {
+            margin: 0;
+            @include spaceY("margin", 10px);
+        }
+
+    }
+
+}
