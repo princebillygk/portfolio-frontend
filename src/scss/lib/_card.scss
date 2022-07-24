@@ -1,7 +1,7 @@
 .card-group {
     display: grid;
     grid-template-columns: auto;
-    gap: 20px;
+    gap:  30px 20px;
 
     @include mq-small {
         grid-template-columns: auto auto;
@@ -17,12 +17,25 @@
 }
 
 .card {
-    padding: 20px;
-    border-radius: $golden-ratio * 2px;
-    @include mat-shadow(1);
+    padding: 15px;
+
+    @include mat-shadow(1, $color-black);
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    border-radius: $golden-ratio * 2px;
+    border-top-width: 5px;
+    border-style: solid;
+
+    &:nth-child(odd) {
+        border-color:  transparentize($color-blue, 0.4);
+    }
+    
+    &:nth-child(even) {
+        border-color:  transparentize($color-orange, 0.4);
+    }
 
     .body{
         @include spaceY(margin, 20px);

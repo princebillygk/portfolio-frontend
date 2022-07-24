@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: auto;
     align-content: start;
-    gap: 10px;
+    gap: 50px 10px;
 
     @include mq-medium{
         grid-template-columns: auto auto
