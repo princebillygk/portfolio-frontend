@@ -3,7 +3,7 @@
    License: none (public domain)
 */
 
-html,body,div,span,h1,h2,h3,h4,h5,h6,p,a,code,img,q,s,i,ul,li,table,caption,tr,th,td,figure,figcaption,header,main,nav,section,time {
+html,body,div,span,h1,h2,h3,h4,h5,h6,p,a,code,img,q,s,i,ul,li,table,caption,tr,th,td,article,figure,figcaption,footer,header,main,nav,section,time {
   margin: 0;
   padding: 0;
   border: 0;
@@ -14,7 +14,7 @@ html,body,div,span,h1,h2,h3,h4,h5,h6,p,a,code,img,q,s,i,ul,li,table,caption,tr,t
 
 /* HTML5 display-role reset for older browsers */
 
-figcaption,figure,header,main,nav,section {
+article,figcaption,figure,footer,header,main,nav,section {
   display: block;
 }
 
@@ -150,7 +150,7 @@ h5 {
 }
 
 .bordered {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.77);
   border-style: solid;
   border-width: 3px;
   border-color: rgb(236, 247, 238);
@@ -191,10 +191,6 @@ h5 {
   font-size: 12pt;
 }
 
-.btn:hover {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-
 .btn:active {
   background-color: rgb(236, 247, 238);
   color: rgb(239, 161, 47);
@@ -206,7 +202,7 @@ h5 {
 
 .btn-group:hover .btn {
   background-color: rgb(245, 245, 245);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.77);
 }
 
 .btn-group:hover .btn span {
@@ -230,7 +226,7 @@ h5 {
 
 .btn-group .btn:hover {
   background-color: white;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(19, 124, 167, 0.77);
 }
 
 .btn-group .btn:hover .btn-icon {
@@ -307,6 +303,11 @@ h5 {
   padding-right: 0;
 }
 
+.py-1 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 .pt-1 {
   padding-top: 0;
 }
@@ -335,6 +336,11 @@ h5 {
 .px-2 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
+}
+
+.py-2 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .pt-2 {
@@ -367,6 +373,11 @@ h5 {
   padding-right: 0.5rem;
 }
 
+.py-3 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 .pt-3 {
   padding-top: 0.5rem;
 }
@@ -395,6 +406,11 @@ h5 {
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .pt-4 {
@@ -427,6 +443,11 @@ h5 {
   padding-right: 1.5rem;
 }
 
+.py-5 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
 .pt-5 {
   padding-top: 1.5rem;
 }
@@ -455,6 +476,11 @@ h5 {
 .px-6 {
   padding-left: 3rem;
   padding-right: 3rem;
+}
+
+.py-6 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .pt-6 {
@@ -491,6 +517,11 @@ section {
   background-color: #eee;
   border-radius: 20rem;
   margin: 5px;
+}
+
+.external-link {
+  color: rgb(19, 124, 167);
+  font-weight: bold;
 }
 
 header {
@@ -643,7 +674,7 @@ section#hero figure.my-photo figcaption {
   padding: 10px 10px;
   border-radius: 50px;
   transition: all 500ms ease-in-out 20ms;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.78);
   font-family: "IBM Plex Mono", monospace;
   font-size: 10pt;
   font-weight: 800;
@@ -667,6 +698,10 @@ nav.main-nav {
 nav.main-nav ul {
   display: flex;
   justify-content: center;
+}
+
+nav.main-nav ul:hover li a {
+  color: rgba(23, 50, 24, 0.4);
 }
 
 nav.main-nav ul li a {
@@ -700,8 +735,8 @@ nav.main-nav ul li a .text {
 }
 
 nav.main-nav ul li a:hover {
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-  color: rgb(239, 161, 47);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(19, 124, 167, 0.78);
+  color: rgb(19, 124, 167);
   border-radius: 10px 10px 0 0;
   font-weight: 800;
 }
@@ -722,7 +757,7 @@ nav.main-nav ul li a:active {
 
 .floating-btn {
   transition: all 500ms ease-in-out 20ms;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.77);
   line-height: 1em;
   padding: 0;
   border-radius: 50%;
@@ -734,6 +769,7 @@ nav.main-nav ul li a:active {
 
 .floating-btn:hover {
   transform: translate(0, -10px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 .floating-btn .btn-icon {
@@ -750,6 +786,80 @@ nav.main-nav ul li a:active {
 
 .active-floating-btn {
   bottom: 30px;
+}
+
+.card-group {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 30px 20px;
+}
+
+@media only screen and (min-width: 576px) {
+  .card-group {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .card-group {
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .card-group {
+    grid-template-columns: auto auto auto auto;
+  }
+}
+
+.card {
+  padding: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 3.2360679775px;
+  border-top-width: 5px;
+  border-style: solid;
+}
+
+.card:nth-child(odd) {
+  border-color: rgba(19, 124, 167, 0.6);
+}
+
+.card:nth-child(even) {
+  border-color: rgba(239, 161, 47, 0.6);
+}
+
+.card .body {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.card .footer {
+  align-self: center;
+}
+
+.card .header {
+  border-bottom: 1px solid #a4d9ae;
+}
+
+.card .header .content-heading {
+  display: flex;
+  align-items: center;
+}
+
+.card .header .content-heading .logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  padding-right: 15px;
+}
+
+.card .header .badge {
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 section#under-construction {
@@ -1020,7 +1130,7 @@ section#under-construction .prototype img {
   display: grid;
   grid-template-columns: auto;
   align-content: start;
-  gap: 10px;
+  gap: 50px 10px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1087,12 +1197,7 @@ section#under-construction .prototype img {
 
 .map-table td {
   width: 100%;
-}
-
-@media only screen and (min-width: 576px) {
-  .map-table th {
-    width: 10rem;
-  }
+  padding-left: 10px;
 }
 
 .map-table th,.map-table td {
@@ -1102,11 +1207,13 @@ section#under-construction .prototype img {
 
 .map-table th {
   font-weight: bold;
-  padding-right: 5px;
+  padding-right: 10px;
 }
 
-.map-table td {
-  padding-left: 5px;
+@media only screen and (min-width: 576px) {
+  .map-table th {
+    width: 10rem;
+  }
 }
 
 section > h2 {

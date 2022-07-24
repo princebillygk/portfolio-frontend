@@ -121,11 +121,6 @@ h5 {
 
     }
 
-
-    &:hover {
-        @include mat-shadow(1);
-    }
-
     &:active {
         background-color: $color-faded-green;
         color: $color-orange;
@@ -164,7 +159,7 @@ h5 {
 
         &:hover {
             background-color: white;
-            @include mat-shadow(2);
+            @include mat-shadow(2, $color-blue);
 
             .btn-icon {
                 color: $color-orange;
@@ -296,4 +291,9 @@ section {
     background-color: #eee;
     border-radius: 20rem;
     margin: 5px;
+}
+
+.external-link {
+    color: $color-blue;
+    font-weight: bold;
 }

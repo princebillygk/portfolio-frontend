@@ -7,6 +7,10 @@ nav.main-nav {
         display: flex;
         justify-content: center;
 
+        &:hover li a {
+            color: transparentize($color-black, 0.6);
+        }
+
         li a {
             display: block;
             transition: box-shadow 400ms ease-in-out;
@@ -34,8 +38,8 @@ nav.main-nav {
             }
 
             &:hover {
-                @include mat-shadow(5);
-                color: $color-orange;
+                @include mat-shadow(5, $color-blue);
+                color: $color-blue;
                 border-radius: 10px 10px 0 0;
                 font-weight: 800;
             }
