@@ -281,6 +281,10 @@ h5 {
   }
 }
 
+.avoid-col-break {
+  break-inside: avoid;
+}
+
 .my-1 {
   margin-top: 0;
   margin-bottom: 0;
