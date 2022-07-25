@@ -374,10 +374,10 @@
                 </article>
                 {{end}}
 
-                <article id="problem-solving-skills" class="my-5">
+                <article class="my-3">
                     <h3 class="my-5">Problem Solving Skill</h3>
                     <div class="card-group mt-5">
-                        <div class="card">
+                        <div id="ps-leetcode" class="card">
                             <div class="header">
                                 <div class="content-heading">
                                     <img class="logo" alt="Leetcode"
@@ -390,11 +390,11 @@
                                 <table class="map-table py-2">
                                     <tr>
                                         <th>Solved</th>
-                                        <td>42</td>
+                                        <td>loading...</td>
                                     </tr>
                                     <tr>
-                                        <th>Submission</th>
-                                        <td>63</td>
+                                        <th>Submitted</th>
+                                        <td>loading...</td>
                                     </tr>
                                 </table>
                             </div>
@@ -404,7 +404,7 @@
                             </div>
                         </div>
 
-                        <div class="card">
+                        <div class="card" id="ps-uva">
                             <div class="header">
                                 <div class="content-heading">
                                     <img class="logo" alt="UVa OJ"
@@ -417,11 +417,11 @@
                                 <table class="map-table py-2">
                                     <tr>
                                         <th>Solved</th>
-                                        <td>104</td>
+                                        <td>Loading...</td>
                                     </tr>
                                     <tr>
-                                        <th>Submission</th>
-                                        <td>271</td>
+                                        <th>Submitted</th>
+                                        <td>Loading...</td>
                                     </tr>
                                 </table>
                             </div>
@@ -431,7 +431,7 @@
                             </div>
                         </div>
 
-                        <div class="card">
+                        <div class="card" id="ps-poj">
                             <div class="header">
                                 <div class="content-heading">
                                     <img class="logo" alt="POJ"
@@ -444,11 +444,11 @@
                                 <table class="map-table py-2">
                                     <tr>
                                         <th>Solved</th>
-                                        <td>29</td>
+                                        <td>loading...</td>
                                     </tr>
                                     <tr>
-                                        <th>Submission</th>
-                                        <td>81</td>
+                                        <th>Submitted</th>
+                                        <td>loading...</td>
                                     </tr>
                                 </table>
                             </div>
@@ -459,7 +459,7 @@
                         </div>
 
 
-                        <div class="card">
+                        <div id="ps-codewars" class="card">
                             <div class="header">
                                 <div class="content-heading">
                                     <img class="logo" alt="Codewars"
@@ -472,11 +472,11 @@
                                 <table class="map-table py-2">
                                     <tr>
                                         <th>Honor</th>
-                                        <td>309</td>
+                                        <td>Loading...</td>
                                     </tr>
                                     <tr>
-                                        <th>Submission</th>
-                                        <td>39</td>
+                                        <th>Solved</th>
+                                        <td>Loading...</td>
                                     </tr>
                                 </table>
                             </div>
@@ -486,7 +486,7 @@
                             </div>
                         </div>
 
-                        <div class="card">
+                        <div class="card" id="ps-lightoj">
                             <div class="header">
                                 <div class="content-heading">
                                     <img class="logo" alt="LightOJ"
@@ -499,11 +499,11 @@
                                 <table class="map-table py-2">
                                     <tr>
                                         <th>Solved</th>
-                                        <td>11</td>
+                                        <td>Loading...</td>
                                     </tr>
                                     <tr>
-                                        <th>Submission</th>
-                                        <td>18</td>
+                                        <th>Submitted</th>
+                                        <td>Loading...</td>
                                     </tr>
                                 </table>
                             </div>
@@ -513,7 +513,7 @@
                             </div>
                         </div>
 
-                        <div class="card">
+                        <div id="ps-timus" class="card">
                             <div class="header">
                                 <div class="content-heading">
                                     <img class="logo" alt="Timus OJ"
@@ -526,7 +526,11 @@
                                 <table class="map-table py-2">
                                     <tr>
                                         <th>Solved</th>
-                                        <td>7</td>
+                                        <td>Loading...</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Rank</th>
+                                        <td>Loading...</td>
                                     </tr>
                                 </table>
                             </div>
@@ -536,7 +540,7 @@
                             </div>
                         </div>
 
-                        <div class="card">
+                        <div class="card" id="ps-codeforces">
                             <div class="header">
                                 <div class="content-heading">
                                     <img class="logo" alt="Codeforces"
@@ -549,11 +553,11 @@
                                 <table class="map-table py-2">
                                     <tr>
                                         <th>Max Rating</th>
-                                        <td>1407</td>
+                                        <td>Loading...</td>
                                     </tr>
                                     <tr>
                                         <th>Max Rank</th>
-                                        <td>Specialist</td>
+                                        <td>Loading...</td>
                                     </tr>
                                 </table>
                             </div>
@@ -591,6 +595,8 @@
                         </div>
                     </div>
                 </article>
+
+
             </section>
 
             {{if .Certificates}}

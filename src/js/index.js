@@ -2,6 +2,12 @@
 const mainNav = document.getElementById("mainNav")
 const moveToTopBtn = document.getElementById("moveToTopBtn")
 
+window.onload = () => {
+    loadProblemSolvingData()
+}
+
+
+
 // events
 window.onscroll = () => {
     y = window.scrollY
